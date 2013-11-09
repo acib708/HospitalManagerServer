@@ -1,5 +1,4 @@
 class HospitalServer
+  require './db_manager'
 
 end
-
-puts 'Hello, World!'
