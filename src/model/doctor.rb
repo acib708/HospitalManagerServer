@@ -1,6 +1,15 @@
 class Doctor
   attr_accessor :clave, :nombre, :direccion, :especialidad, :telefono, :foto
 
+  def initialize
+    @clave        = ''
+    @nombre       = ''
+    @direccion    = ''
+    @especialidad = ''
+    @telefono     = ''
+    @foto         = ''
+  end
+
   def to_s
     "Clave: #{clave}\nNombre: #{nombre}\nDireccion: #{direccion}\nEspecialidad: #{especialidad}\nTelefono: #{telefono}\nFoto: #{foto}"
   end

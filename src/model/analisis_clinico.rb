@@ -1,6 +1,12 @@
 class AnalisisClinico
   attr_accessor :clave, :tipo, :descripcion
 
+  def initialize
+    @clave = ''
+    @tipo  = ''
+    @descripcion = ''
+  end
+
   def to_s
     "Clave: #{clave}\nTipo: #{tipo}\nDescripcion: #{descripcion}"
   end
