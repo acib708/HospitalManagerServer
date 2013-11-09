@@ -2,19 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0db8815-134c-47f4-afe6-0f377aad9ab2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/atiende.rb" afterPath="$PROJECT_DIR$/src/model/atiende.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/model/doctor.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="HospitalServer.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/hospital_server.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384025164621" ignored="false" />
-    <file path="$PROJECT_DIR$/../Hospital/.idea/workspace.xml" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384026947946" ignored="false" />
-    <file path="/Dummy.txt" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384025784766" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/.idea/workspace.xml" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384027059589" ignored="false" />
+    <file path="/Dummy.txt" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384026958722" ignored="false" />
     <file path="$PROJECT_DIR$/../Hospital/.gitignore" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384022960140" ignored="false" />
     <file path="/db_manager.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384023636305" ignored="false" />
     <file path="/analisis_clinico.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384024492982" ignored="false" />
     <file path="/atiende.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384026852292" ignored="false" />
+    <file path="/doctor.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384027417155" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,28 +75,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="atiende.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="atiende.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/atiende.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="31" selection-start="436" selection-end="436" vertical-scroll-proportion="0.30241936">
+            <state line="10" column="31" selection-start="436" selection-end="436" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="analisis_clinico.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/analisis_clinico.rb">
+      <file leaf-file-name="doctor.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/model/doctor.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="16" selection-start="308" selection-end="308" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="hospital_server.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hospital_server.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="31" selection-start="71" selection-end="71" vertical-scroll-proportion="0.0">
+            <state line="13" column="2" selection-start="519" selection-end="519" vertical-scroll-proportion="0.39314517">
               <folding />
             </state>
           </provider>
@@ -125,6 +116,7 @@
         <option value="$PROJECT_DIR$/src/hospital_server.rb" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/model/atiende.rb" />
+        <option value="$PROJECT_DIR$/src/model/doctor.rb" />
       </list>
     </option>
   </component>
@@ -546,7 +538,11 @@
       <created>1384025788672</created>
       <updated>1384025788672</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Completed model atiende">
+      <created>1384026960198</created>
+      <updated>1384026960198</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -622,7 +618,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added .idea" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed model atiende" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -639,6 +635,7 @@
     <MESSAGE value="Basic required files, and gems." />
     <MESSAGE value="Added model: analisis_clinico" />
     <MESSAGE value="Added .idea" />
+    <MESSAGE value="Completed model atiende" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -695,23 +692,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hospital_server.rb">
+    <entry file="file://$PROJECT_DIR$/src/model/analisis_clinico.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="31" selection-start="71" selection-end="71" vertical-scroll-proportion="0.0">
+        <state line="13" column="16" selection-start="308" selection-end="308" vertical-scroll-proportion="0.38310412">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/analisis_clinico.rb">
+    <entry file="file://$PROJECT_DIR$/src/hospital_server.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="16" selection-start="308" selection-end="308" vertical-scroll-proportion="0.0">
+        <state line="3" column="31" selection-start="71" selection-end="71" vertical-scroll-proportion="0.08840864">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/atiende.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="31" selection-start="436" selection-end="436" vertical-scroll-proportion="0.30241936">
+        <state line="10" column="31" selection-start="436" selection-end="436" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/doctor.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="2" selection-start="519" selection-end="519" vertical-scroll-proportion="0.39314517">
           <folding />
         </state>
       </provider>
