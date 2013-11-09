@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a0db8815-134c-47f4-afe6-0f377aad9ab2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dbmanager.thrift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HospitalServer.iml" afterPath="$PROJECT_DIR$/HospitalServer.iml" />
+    <list default="true" id="a0db8815-134c-47f4-afe6-0f377aad9ab2" name="Default" comment="Added thrift file">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hospital_server.rb" afterPath="$PROJECT_DIR$/src/hospital_server.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="HospitalServer.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/hospital_server.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384028509952" ignored="false" />
-    <file path="$PROJECT_DIR$/../Hospital/.idea/workspace.xml" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384029307274" ignored="false" />
-    <file path="/Dummy.txt" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384027918638" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/.idea/workspace.xml" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384029320116" ignored="false" />
+    <file path="/Dummy.txt" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384029320732" ignored="false" />
     <file path="$PROJECT_DIR$/../Hospital/.gitignore" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384022960140" ignored="false" />
     <file path="/db_manager.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384023636305" ignored="false" />
     <file path="/analisis_clinico.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384027542346" ignored="false" />
@@ -88,10 +86,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hospital_server.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="hospital_server.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/hospital_server.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="40" selection-start="115" selection-end="115" vertical-scroll-proportion="0.0">
+            <state line="5" column="0" selection-start="76" selection-end="367" vertical-scroll-proportion="0.14734773">
               <folding />
             </state>
           </provider>
@@ -115,10 +113,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dbmanager.thrift" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="dbmanager.thrift" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dbmanager.thrift">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="21" selection-start="159" selection-end="159" vertical-scroll-proportion="0.26522595">
+            <state line="9" column="21" selection-start="159" selection-end="159" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -148,8 +146,8 @@
         <option value="$PROJECT_DIR$/src/model/atiende.rb" />
         <option value="$PROJECT_DIR$/src/model/doctor.rb" />
         <option value="$PROJECT_DIR$/src/model/paciente.rb" />
-        <option value="$PROJECT_DIR$/src/hospital_server.rb" />
         <option value="$PROJECT_DIR$/src/dbmanager.thrift" />
+        <option value="$PROJECT_DIR$/src/hospital_server.rb" />
       </list>
     </option>
   </component>
@@ -583,7 +581,11 @@
       <created>1384027920328</created>
       <updated>1384027920328</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added thrift file">
+      <created>1384029318475</created>
+      <updated>1384029318475</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -659,7 +661,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Completed model paciente" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added thrift file" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -679,6 +681,7 @@
     <MESSAGE value="Completed model atiende" />
     <MESSAGE value="Completed model doctor" />
     <MESSAGE value="Completed model paciente" />
+    <MESSAGE value="Added thrift file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -711,7 +714,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HospitalServer.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
@@ -749,16 +754,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hospital_server.rb">
+    <entry file="file://$PROJECT_DIR$/src/model/doctor.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="40" selection-start="115" selection-end="115" vertical-scroll-proportion="0.0">
+        <state line="14" column="14" selection-start="404" selection-end="404" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/doctor.rb">
+    <entry file="file://$PROJECT_DIR$/src/dbmanager.thrift">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="14" selection-start="404" selection-end="404" vertical-scroll-proportion="0.0">
+        <state line="9" column="21" selection-start="159" selection-end="159" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -770,9 +775,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dbmanager.thrift">
+    <entry file="file://$PROJECT_DIR$/src/hospital_server.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="21" selection-start="159" selection-end="159" vertical-scroll-proportion="0.26522595">
+        <state line="5" column="0" selection-start="76" selection-end="367" vertical-scroll-proportion="0.14734773">
           <folding />
         </state>
       </provider>
