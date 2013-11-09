@@ -1,4 +1,7 @@
 class HospitalServer
-  require './db_manager'
+  require './model/db_manager'
+  require 'thrift'
+
+
 
 end
