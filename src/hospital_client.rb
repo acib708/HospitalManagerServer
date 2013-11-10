@@ -10,12 +10,8 @@ begin
   transport.open
 
   #Test client
-  doc = doc
-  if(client.capturar_doctor Doctor.new)
-    puts 'Hello World!'
-  else
-    puts 'Thrift zuckz!'
-  end
+  ans = client.consultarAnalisis
+  ans.each {|x| puts x.descripcion}
 
   #Close connection
   transport.close
