@@ -2,7 +2,7 @@ require 'thrift'
 require './actions'
 
 begin
-  transport = Thrift::BufferedTransport.new Thrift::Socket.new '192.168.0.100',9090
+  transport = Thrift::BufferedTransport.new Thrift::Socket.new '192.168.19.14', 7911
   protocol  = Thrift::BinaryProtocol.new transport
   client    = Actions::Client.new protocol
 
