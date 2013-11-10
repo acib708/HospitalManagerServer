@@ -309,6 +309,7 @@ class DBManager
   end
 
   #Reportes
+  #TODO: Arreglar queries de reportes
   def generarReporteAnalisisPaciente(clavePaciente) #Returns an array of ReporteAnalisisPaciente objects, nil on failure
     reportes = []
     res = @connection.exec "SELECT * FROM (paciente INNER JOIN serealiza ON paciente.clave = '#{clavePaciente}' AND paciente.clave = serealiza.clavepaciente) INNER JOIN analisisclinico ON analisisclinico.clave = serealiza.claveanalisis"

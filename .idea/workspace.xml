@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0db8815-134c-47f4-afe6-0f377aad9ab2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HospitalServer.iml" afterPath="$PROJECT_DIR$/HospitalServer.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/actions.rb" afterPath="$PROJECT_DIR$/src/actions.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/actions.thrift" afterPath="$PROJECT_DIR$/src/actions.thrift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/actions_constants.rb" afterPath="$PROJECT_DIR$/src/actions_constants.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/actions_types.rb" afterPath="$PROJECT_DIR$/src/actions_types.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/db_manager.rb" afterPath="$PROJECT_DIR$/src/db_manager.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -14,9 +9,9 @@
     <ignored path=".idea/workspace.xml" />
     <file path="/hospital_server.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384043107126" ignored="false" />
     <file path="$PROJECT_DIR$/../Hospital/.idea/workspace.xml" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384029320116" ignored="false" />
-    <file path="/Dummy.txt" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384053325283" ignored="false" />
+    <file path="/Dummy.txt" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384059489626" ignored="false" />
     <file path="$PROJECT_DIR$/../Hospital/.gitignore" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384022960140" ignored="false" />
-    <file path="/db_manager.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384059198339" ignored="false" />
+    <file path="/db_manager.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384059896002" ignored="false" />
     <file path="/analisis_clinico.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384027542346" ignored="false" />
     <file path="/atiende.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384027599996" ignored="false" />
     <file path="/doctor.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384027642543" ignored="false" />
@@ -27,7 +22,7 @@
     <file path="/db.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384040726905" ignored="false" />
     <file path="/calc.thrift" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384041003423" ignored="false" />
     <file path="/calc.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384041173963" ignored="false" />
-    <file path="/hospital_client.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384053168161" ignored="false" />
+    <file path="/hospital_client.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384068207747" ignored="false" />
     <file path="/actions.thrift" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384056779129" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -89,19 +84,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="db_manager.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="db_manager.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/db_manager.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="345" column="47" selection-start="12817" selection-end="12817" vertical-scroll-proportion="0.25294888">
+            <state line="13" column="48" selection-start="386" selection-end="386" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hospital_client.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="hospital_client.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/hospital_client.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="19" selection-start="667" selection-end="677" vertical-scroll-proportion="0.0">
+            <state line="19" column="50" selection-start="544" selection-end="544" vertical-scroll-proportion="0.36821705">
               <folding />
             </state>
           </provider>
@@ -110,7 +105,7 @@
       <file leaf-file-name="hospital_server.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/hospital_server.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="23" selection-start="395" selection-end="395" vertical-scroll-proportion="0.0">
+            <state line="12" column="46" selection-start="395" selection-end="395" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -144,12 +139,12 @@
         <option value="$PROJECT_DIR$/src/thrift_files/actions.thrift" />
         <option value="$PROJECT_DIR$/src/thrift_files/actions.rb" />
         <option value="$PROJECT_DIR$/src/hospital_server.rb" />
-        <option value="$PROJECT_DIR$/src/hospital_client.rb" />
         <option value="$PROJECT_DIR$/src/actions.thrift" />
         <option value="$PROJECT_DIR$/src/actions.rb" />
         <option value="$PROJECT_DIR$/src/actions_types.rb" />
         <option value="$PROJECT_DIR$/src/actions_constants.rb" />
         <option value="$PROJECT_DIR$/src/db_manager.rb" />
+        <option value="$PROJECT_DIR$/src/hospital_client.rb" />
       </list>
     </option>
   </component>
@@ -638,8 +633,32 @@
       <created>1384045976005</created>
       <updated>1384045976005</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Faltan queries correctos para reportes. Everything else works.">
+      <created>1384059499038</created>
+      <updated>1384059499038</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
+  </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -656,19 +675,19 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32917705" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2482066" sideWeight="0.67412937" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32587063" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2482066" sideWeight="0.6745636" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3254364" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -714,7 +733,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added necessary thrift files, before db_manager implementation." />
+    <option name="LAST_COMMIT_MESSAGE" value="Faltan queries correctos para reportes. Everything else works." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -737,6 +756,7 @@
     <MESSAGE value="Added thrift file" />
     <MESSAGE value="Hicimos un desvergue. Este empieza a ser el buenazo. Este comentario lo escribio marcelo, yo no escribo como naco." />
     <MESSAGE value="Added necessary thrift files, before db_manager implementation." />
+    <MESSAGE value="Faltan queries correctos para reportes. Everything else works." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -829,23 +849,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hospital_client.rb">
+    <entry file="file://$PROJECT_DIR$/src/db_manager.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="19" selection-start="667" selection-end="677" vertical-scroll-proportion="0.0">
+        <state line="13" column="48" selection-start="386" selection-end="386" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hospital_server.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="23" selection-start="395" selection-end="395" vertical-scroll-proportion="0.0">
+        <state line="12" column="46" selection-start="395" selection-end="395" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/db_manager.rb">
+    <entry file="file://$PROJECT_DIR$/src/hospital_client.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="345" column="47" selection-start="12817" selection-end="12817" vertical-scroll-proportion="0.25294888">
+        <state line="19" column="50" selection-start="544" selection-end="544" vertical-scroll-proportion="0.36821705">
           <folding />
         </state>
       </provider>
