@@ -1,12 +1,13 @@
 require './model/db_manager'
 require 'thrift'
+require './actions'
 
-db_manager = DBManager.new
+handler           = DBManager.new
+processor         = Actions::Processor.new handler
+transport         = Thrift::ServerSocket.new 9090
+transport_factory = Thrift::BufferedTransportFactory.new
+server            = Thrift::SimpleServer.new processor, transport, transport_factory
 
-#processor = Calculator::Processor.new(sb)
-#transport = Thrift::ServerSocket.new(9090)
-#transportFactory = Thrift::BufferedTransportFactory.new()
-#server = Thrift::SimpleServer.new(processor, transport, transportFactory)
-#puts "Starting the Calculator server..."
-#server.serve()
-#puts "done."
+puts "Starting the QService server..."
+server.serve()
+puts "Done"

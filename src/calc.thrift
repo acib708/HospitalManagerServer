@@ -7,7 +7,7 @@ struct Doctor{
  	6: string foto
  }
 
- service Actions{
+ service calc{
      //Doctores
      bool capturar_doctor(1: Doctor doctor)
  }
