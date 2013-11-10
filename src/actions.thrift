@@ -46,9 +46,9 @@ struct ReporteAnalisisPaciente{
     2: string claveAnalisis,
     3: string fechaAplic,
     4: string nombrePaciente,
-    5: string fechaentrega,
+    5: string fechaEntrega,
     6: string tipo,
-    7: string descripcion
+    7: string descripcion,
     8: string fotoPaciente
 }
 
@@ -67,9 +67,9 @@ struct ReporteDoctoresPaciente{
 struct ReportePacientesAnalisis{
     1: string clavePaciente,
     2: string claveAnalisis,
-    3: string fechaAplica,
+    3: string fechaAplic,
     4: string nombrePaciente,
-    5: string fechaentrega,
+    5: string fechaEntrega,
     6: string tipo,
     7: string descripcion,
     8: string fotoPaciente

@@ -16,12 +16,12 @@ class Doctor
   FOTO = 6
 
   FIELDS = {
-    CLAVE => {:type => ::Thrift::Types::STRING, :name => 'clave'},
-    NOMBRE => {:type => ::Thrift::Types::STRING, :name => 'nombre'},
-    DIRECCION => {:type => ::Thrift::Types::STRING, :name => 'direccion'},
-    ESPECIALIDAD => {:type => ::Thrift::Types::STRING, :name => 'especialidad'},
-    TELEFONO => {:type => ::Thrift::Types::STRING, :name => 'telefono'},
-    FOTO => {:type => ::Thrift::Types::STRING, :name => 'foto'}
+      CLAVE => {:type => ::Thrift::Types::STRING, :name => 'clave'},
+      NOMBRE => {:type => ::Thrift::Types::STRING, :name => 'nombre'},
+      DIRECCION => {:type => ::Thrift::Types::STRING, :name => 'direccion'},
+      ESPECIALIDAD => {:type => ::Thrift::Types::STRING, :name => 'especialidad'},
+      TELEFONO => {:type => ::Thrift::Types::STRING, :name => 'telefono'},
+      FOTO => {:type => ::Thrift::Types::STRING, :name => 'foto'}
   }
 
   def struct_fields; FIELDS; end
@@ -39,9 +39,9 @@ class AnalisisClinico
   DESCRIPCION = 3
 
   FIELDS = {
-    CLAVE => {:type => ::Thrift::Types::STRING, :name => 'clave'},
-    TIPO => {:type => ::Thrift::Types::STRING, :name => 'tipo'},
-    DESCRIPCION => {:type => ::Thrift::Types::STRING, :name => 'descripcion'}
+      CLAVE => {:type => ::Thrift::Types::STRING, :name => 'clave'},
+      TIPO => {:type => ::Thrift::Types::STRING, :name => 'tipo'},
+      DESCRIPCION => {:type => ::Thrift::Types::STRING, :name => 'descripcion'}
   }
 
   def struct_fields; FIELDS; end
@@ -63,13 +63,13 @@ class Atiende
   FOTOPACIENTE = 7
 
   FIELDS = {
-    CLAVEDOCTOR => {:type => ::Thrift::Types::STRING, :name => 'claveDoctor'},
-    CLAVEPACIENTE => {:type => ::Thrift::Types::STRING, :name => 'clavePaciente'},
-    FECHA => {:type => ::Thrift::Types::STRING, :name => 'fecha'},
-    TRATAMIENTO => {:type => ::Thrift::Types::STRING, :name => 'tratamiento'},
-    DIAGNOSTICO => {:type => ::Thrift::Types::STRING, :name => 'diagnostico'},
-    FOTODOCTOR => {:type => ::Thrift::Types::STRING, :name => 'fotoDoctor'},
-    FOTOPACIENTE => {:type => ::Thrift::Types::STRING, :name => 'fotoPaciente'}
+      CLAVEDOCTOR => {:type => ::Thrift::Types::STRING, :name => 'claveDoctor'},
+      CLAVEPACIENTE => {:type => ::Thrift::Types::STRING, :name => 'clavePaciente'},
+      FECHA => {:type => ::Thrift::Types::STRING, :name => 'fecha'},
+      TRATAMIENTO => {:type => ::Thrift::Types::STRING, :name => 'tratamiento'},
+      DIAGNOSTICO => {:type => ::Thrift::Types::STRING, :name => 'diagnostico'},
+      FOTODOCTOR => {:type => ::Thrift::Types::STRING, :name => 'fotoDoctor'},
+      FOTOPACIENTE => {:type => ::Thrift::Types::STRING, :name => 'fotoPaciente'}
   }
 
   def struct_fields; FIELDS; end
@@ -89,11 +89,11 @@ class Paciente
   FOTO = 5
 
   FIELDS = {
-    CLAVE => {:type => ::Thrift::Types::STRING, :name => 'clave'},
-    NOMBRE => {:type => ::Thrift::Types::STRING, :name => 'nombre'},
-    DIRECCION => {:type => ::Thrift::Types::STRING, :name => 'direccion'},
-    TELEFONO => {:type => ::Thrift::Types::STRING, :name => 'telefono'},
-    FOTO => {:type => ::Thrift::Types::STRING, :name => 'foto'}
+      CLAVE => {:type => ::Thrift::Types::STRING, :name => 'clave'},
+      NOMBRE => {:type => ::Thrift::Types::STRING, :name => 'nombre'},
+      DIRECCION => {:type => ::Thrift::Types::STRING, :name => 'direccion'},
+      TELEFONO => {:type => ::Thrift::Types::STRING, :name => 'telefono'},
+      FOTO => {:type => ::Thrift::Types::STRING, :name => 'foto'}
   }
 
   def struct_fields; FIELDS; end
@@ -113,11 +113,11 @@ class SeRealiza
   FOTOPACIENTE = 5
 
   FIELDS = {
-    CLAVEANALISIS => {:type => ::Thrift::Types::STRING, :name => 'claveAnalisis'},
-    CLAVEPACIENTE => {:type => ::Thrift::Types::STRING, :name => 'clavePaciente'},
-    FECHAAPLIC => {:type => ::Thrift::Types::STRING, :name => 'fechaAplic'},
-    FECHAENTREGA => {:type => ::Thrift::Types::STRING, :name => 'fechaEntrega'},
-    FOTOPACIENTE => {:type => ::Thrift::Types::STRING, :name => 'fotoPaciente'}
+      CLAVEANALISIS => {:type => ::Thrift::Types::STRING, :name => 'claveAnalisis'},
+      CLAVEPACIENTE => {:type => ::Thrift::Types::STRING, :name => 'clavePaciente'},
+      FECHAAPLIC => {:type => ::Thrift::Types::STRING, :name => 'fechaAplic'},
+      FECHAENTREGA => {:type => ::Thrift::Types::STRING, :name => 'fechaEntrega'},
+      FOTOPACIENTE => {:type => ::Thrift::Types::STRING, :name => 'fotoPaciente'}
   }
 
   def struct_fields; FIELDS; end
@@ -140,14 +140,14 @@ class ReporteAnalisisPaciente
   FOTOPACIENTE = 8
 
   FIELDS = {
-    CLAVEPACIENTE => {:type => ::Thrift::Types::STRING, :name => 'clavePaciente'},
-    CLAVEANALISIS => {:type => ::Thrift::Types::STRING, :name => 'claveAnalisis'},
-    FECHAAPLIC => {:type => ::Thrift::Types::STRING, :name => 'fechaAplic'},
-    NOMBREPACIENTE => {:type => ::Thrift::Types::STRING, :name => 'nombrePaciente'},
-    FECHAENTREGA => {:type => ::Thrift::Types::STRING, :name => 'fechaentrega'},
-    TIPO => {:type => ::Thrift::Types::STRING, :name => 'tipo'},
-    DESCRIPCION => {:type => ::Thrift::Types::STRING, :name => 'descripcion'},
-    FOTOPACIENTE => {:type => ::Thrift::Types::STRING, :name => 'fotoPaciente'}
+      CLAVEPACIENTE => {:type => ::Thrift::Types::STRING, :name => 'clavePaciente'},
+      CLAVEANALISIS => {:type => ::Thrift::Types::STRING, :name => 'claveAnalisis'},
+      FECHAAPLIC => {:type => ::Thrift::Types::STRING, :name => 'fechaAplic'},
+      NOMBREPACIENTE => {:type => ::Thrift::Types::STRING, :name => 'nombrePaciente'},
+      FECHAENTREGA => {:type => ::Thrift::Types::STRING, :name => 'fechaEntrega'},
+      TIPO => {:type => ::Thrift::Types::STRING, :name => 'tipo'},
+      DESCRIPCION => {:type => ::Thrift::Types::STRING, :name => 'descripcion'},
+      FOTOPACIENTE => {:type => ::Thrift::Types::STRING, :name => 'fotoPaciente'}
   }
 
   def struct_fields; FIELDS; end
@@ -171,15 +171,15 @@ class ReporteDoctoresPaciente
   FOTOPACIENTE = 9
 
   FIELDS = {
-    CLAVEPACIENTE => {:type => ::Thrift::Types::STRING, :name => 'clavePaciente'},
-    CLAVEDOCTOR => {:type => ::Thrift::Types::STRING, :name => 'claveDoctor'},
-    NOMBREPACIENTE => {:type => ::Thrift::Types::STRING, :name => 'nombrePaciente'},
-    NOMBREDOCTOR => {:type => ::Thrift::Types::STRING, :name => 'nombreDoctor'},
-    TRATAMIENTO => {:type => ::Thrift::Types::STRING, :name => 'tratamiento'},
-    DIAGNOSTICO => {:type => ::Thrift::Types::STRING, :name => 'diagnostico'},
-    FECHA => {:type => ::Thrift::Types::STRING, :name => 'fecha'},
-    FOTODOCTOR => {:type => ::Thrift::Types::STRING, :name => 'fotoDoctor'},
-    FOTOPACIENTE => {:type => ::Thrift::Types::STRING, :name => 'fotoPaciente'}
+      CLAVEPACIENTE => {:type => ::Thrift::Types::STRING, :name => 'clavePaciente'},
+      CLAVEDOCTOR => {:type => ::Thrift::Types::STRING, :name => 'claveDoctor'},
+      NOMBREPACIENTE => {:type => ::Thrift::Types::STRING, :name => 'nombrePaciente'},
+      NOMBREDOCTOR => {:type => ::Thrift::Types::STRING, :name => 'nombreDoctor'},
+      TRATAMIENTO => {:type => ::Thrift::Types::STRING, :name => 'tratamiento'},
+      DIAGNOSTICO => {:type => ::Thrift::Types::STRING, :name => 'diagnostico'},
+      FECHA => {:type => ::Thrift::Types::STRING, :name => 'fecha'},
+      FOTODOCTOR => {:type => ::Thrift::Types::STRING, :name => 'fotoDoctor'},
+      FOTOPACIENTE => {:type => ::Thrift::Types::STRING, :name => 'fotoPaciente'}
   }
 
   def struct_fields; FIELDS; end
@@ -194,7 +194,7 @@ class ReportePacientesAnalisis
   include ::Thrift::Struct, ::Thrift::Struct_Union
   CLAVEPACIENTE = 1
   CLAVEANALISIS = 2
-  FECHAAPLICA = 3
+  FECHAAPLIC = 3
   NOMBREPACIENTE = 4
   FECHAENTREGA = 5
   TIPO = 6
@@ -202,14 +202,14 @@ class ReportePacientesAnalisis
   FOTOPACIENTE = 8
 
   FIELDS = {
-    CLAVEPACIENTE => {:type => ::Thrift::Types::STRING, :name => 'clavePaciente'},
-    CLAVEANALISIS => {:type => ::Thrift::Types::STRING, :name => 'claveAnalisis'},
-    FECHAAPLICA => {:type => ::Thrift::Types::STRING, :name => 'fechaAplica'},
-    NOMBREPACIENTE => {:type => ::Thrift::Types::STRING, :name => 'nombrePaciente'},
-    FECHAENTREGA => {:type => ::Thrift::Types::STRING, :name => 'fechaentrega'},
-    TIPO => {:type => ::Thrift::Types::STRING, :name => 'tipo'},
-    DESCRIPCION => {:type => ::Thrift::Types::STRING, :name => 'descripcion'},
-    FOTOPACIENTE => {:type => ::Thrift::Types::STRING, :name => 'fotoPaciente'}
+      CLAVEPACIENTE => {:type => ::Thrift::Types::STRING, :name => 'clavePaciente'},
+      CLAVEANALISIS => {:type => ::Thrift::Types::STRING, :name => 'claveAnalisis'},
+      FECHAAPLIC => {:type => ::Thrift::Types::STRING, :name => 'fechaAplic'},
+      NOMBREPACIENTE => {:type => ::Thrift::Types::STRING, :name => 'nombrePaciente'},
+      FECHAENTREGA => {:type => ::Thrift::Types::STRING, :name => 'fechaEntrega'},
+      TIPO => {:type => ::Thrift::Types::STRING, :name => 'tipo'},
+      DESCRIPCION => {:type => ::Thrift::Types::STRING, :name => 'descripcion'},
+      FOTOPACIENTE => {:type => ::Thrift::Types::STRING, :name => 'fotoPaciente'}
   }
 
   def struct_fields; FIELDS; end
@@ -233,15 +233,15 @@ class ReportePacientesDoctor
   FOTOPACIENTE = 9
 
   FIELDS = {
-    CLAVEPACIENTE => {:type => ::Thrift::Types::STRING, :name => 'clavePaciente'},
-    CLAVEDOCTOR => {:type => ::Thrift::Types::STRING, :name => 'claveDoctor'},
-    NOMBREPACIENTE => {:type => ::Thrift::Types::STRING, :name => 'nombrePaciente'},
-    NOMBREDOCTOR => {:type => ::Thrift::Types::STRING, :name => 'nombreDoctor'},
-    TRATAMIENTO => {:type => ::Thrift::Types::STRING, :name => 'tratamiento'},
-    DIAGNOSTICO => {:type => ::Thrift::Types::STRING, :name => 'diagnostico'},
-    FECHA => {:type => ::Thrift::Types::STRING, :name => 'fecha'},
-    FOTODOCTOR => {:type => ::Thrift::Types::STRING, :name => 'fotoDoctor'},
-    FOTOPACIENTE => {:type => ::Thrift::Types::STRING, :name => 'fotoPaciente'}
+      CLAVEPACIENTE => {:type => ::Thrift::Types::STRING, :name => 'clavePaciente'},
+      CLAVEDOCTOR => {:type => ::Thrift::Types::STRING, :name => 'claveDoctor'},
+      NOMBREPACIENTE => {:type => ::Thrift::Types::STRING, :name => 'nombrePaciente'},
+      NOMBREDOCTOR => {:type => ::Thrift::Types::STRING, :name => 'nombreDoctor'},
+      TRATAMIENTO => {:type => ::Thrift::Types::STRING, :name => 'tratamiento'},
+      DIAGNOSTICO => {:type => ::Thrift::Types::STRING, :name => 'diagnostico'},
+      FECHA => {:type => ::Thrift::Types::STRING, :name => 'fecha'},
+      FOTODOCTOR => {:type => ::Thrift::Types::STRING, :name => 'fotoDoctor'},
+      FOTOPACIENTE => {:type => ::Thrift::Types::STRING, :name => 'fotoPaciente'}
   }
 
   def struct_fields; FIELDS; end

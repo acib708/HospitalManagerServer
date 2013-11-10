@@ -52,7 +52,8 @@ class DBManager
   #Borrar
   def borrarAnalisis(clave) #Returns a boolean indicating success or failure
     @connection.exec "DELETE FROM serealiza WHERE claveanalisis='#{clave}'"
-    @connection.exec "DELETE FROM analisiclinico WHERE clave='#{clave}'"
+    res = @connection.exec "DELETE FROM analisisclinico WHERE clave='#{clave}'"
+    res.cmd_tuples == 1 ? true:false
     true
   rescue PG::Error => e
     puts "Hubo un error al borrar de la base de datos: #{e.message}"
@@ -61,17 +62,18 @@ class DBManager
 
   def borrarDoctor(clave) #Returns a boolean indicating success or failure
     @connection.exec "DELETE FROM atiende WHERE clavedoctor='#{clave}'"
-    @connection.exec "DELETE FROM doctor WHERE clave='#{clave}'"
-    true
+    res = @connection.exec "DELETE FROM doctor WHERE clave='#{clave}'"
+    res.cmd_tuples == 1 ? true:false
   rescue PG::Error => e
     puts "Hubo un error al borrar de la base de datos: #{e.message}"
-    true
+    false
   end
 
   def borrarPaciente(clave) #Returns a boolean indicating success or failure
     @connection.exec "DELETE FROM serealiza WHERE clavePaciente='#{clave}'"
     @connection.exec "DELETE FROM atiende WHERE clavePaciente='#{clave}'"
-    @connection.exec "DELETE FROM paciente WHERE clave='#{clave}'"
+    res = @connection.exec "DELETE FROM paciente WHERE clave='#{clave}'"
+    res.cmd_tuples == 1 ? true:false
     true
   rescue PG::Error => e
     puts "Hubo un error al borrar de la base de datos: #{e.message}"
@@ -160,13 +162,13 @@ class DBManager
     res = @connection.exec 'SELECT * FROM atiende'
     res.each do |tuple|
       current = Atiende.new
-      current.claveDoctor   = tuple['claveDoctor']
-      current.clavePaciente = tuple['clavePaciente']
+      current.claveDoctor   = tuple['clavedoctor']
+      current.clavePaciente = tuple['clavepaciente']
       current.diagnostico   = tuple['diagnostico']
       current.tratamiento   = tuple['tratamiento']
       current.fecha         = tuple['fecha']
-      current.fotoDoctor    = tuple['fotoDoctor']
-      current.fotoPaciente  = tuple['fotoPaciente']
+      current.fotoDoctor    = tuple['fotodoctor']
+      current.fotoPaciente  = tuple['fotopaciente']
       atiendes << current
     end
     atiendes
@@ -198,11 +200,11 @@ class DBManager
     res = @connection.exec 'SELECT * FROM serealiza'
     res.each do |tuple|
       current = SeRealiza.new
-      current.claveAnalisis = tuple['claveAnalisis']
-      current.clavePaciente = tuple['clavePaciente']
-      current.fechaAplic    = tuple['fechaAplic']
-      current.fechaEntrega  = tuple['fechaEntrega']
-      current.fotoPaciente  = tuple['fotoPaciente']
+      current.claveAnalisis = tuple['claveanalisis']
+      current.clavePaciente = tuple['clavepaciente']
+      current.fechaAplic    = tuple['fechaaplic']
+      current.fechaEntrega  = tuple['fechaentrega']
+      current.fotoPaciente  = tuple['fotopaciente']
       serealizas << current
     end
     serealizas
@@ -312,14 +314,14 @@ class DBManager
     res = @connection.exec "SELECT * FROM (paciente INNER JOIN serealiza ON paciente.clave = '#{clavePaciente}' AND paciente.clave = serealiza.clavepaciente) INNER JOIN analisisclinico ON analisisclinico.clave = serealiza.claveanalisis"
     res.each do |tuple|
       current = ReporteAnalisisPaciente.new
-      current.claveAnalisis  = tuple['analisisclinico.clave']
-      current.clavePaciente  = tuple['paciente.clave']
-      current.tipo           = tuple['analisisclinico.tipo']
-      current.nombrePaciente = tuple['paciente.nombre']
-      current.fechaAplic     = tuple['serealiza.fechaaplic']
-      current.fechaEntrega   = tuple['serealiza.fechaentrega']
-      current.descripcion    = tuple['analisisclinico.descripcion']
-      current.fotoPaciente   = tuple['paciente.foto']
+      current.claveAnalisis  = tuple['claveanalisis']
+      current.clavePaciente  = tuple['clavepaciente']
+      current.tipo           = tuple['tipo']
+      current.nombrePaciente = tuple['nombre']
+      current.fechaAplic     = tuple['fechaaplic']
+      current.fechaEntrega   = tuple['fechaentrega']
+      current.descripcion    = tuple['descripcion']
+      current.fotoPaciente   = tuple['foto']
       reportes << current
     end
     reportes
@@ -330,17 +332,17 @@ class DBManager
 
   def generarReportePacientesAnalisis(claveAnalisis) #Returns an array of ReportePacientesAnalisis objects, nil on failure
     reportes = []
-    res = @connection.exec "SELECT * FROM (analisisclinico INNER JOIN serealiza ON analisiclinico.clave = '#{claveAnalisis}' AND analisisclinico.clave = serealiza.claveanalisis) INNER JOIN paciente ON paciente.clave = serealiza.clavepaciente"
+    res = @connection.exec "SELECT * FROM (analisisclinico INNER JOIN serealiza ON analisisclinico.clave = '#{claveAnalisis}' AND analisisclinico.clave = serealiza.claveanalisis) INNER JOIN paciente ON paciente.clave = serealiza.clavepaciente"
     res.each do |tuple|
       current = ReportePacientesAnalisis.new
-      current.claveAnalisis  = tuple['analisisclinico.clave']
-      current.clavePaciente  = tuple['paciente.clave']
-      current.tipo           = tuple['analisisclinico.tipo']
-      current.nombrePaciente = tuple['paciente.nombre']
-      current.fechaAplic     = tuple['serealiza.fechaaplic']
-      current.fechaEntrega   = tuple['serealiza.fechaentrega']
-      current.descripcion    = tuple['analisisclinico.descripcion']
-      current.fotoPaciente   = tuple['paciente.foto']
+      current.claveAnalisis  = tuple['claveanalisis']
+      current.clavePaciente  = tuple['clavepaciente']
+      current.tipo           = tuple['tipo']
+      current.nombrePaciente = tuple['nombre']
+      current.fechaAplic     = tuple['fechaaplic']
+      current.fechaEntrega   = tuple['fechaentrega']
+      current.descripcion    = tuple['descripcion']
+      current.fotoPaciente   = tuple['foto']
       reportes << current
     end
     reportes
@@ -353,16 +355,17 @@ class DBManager
     reportes = []
     res = @connection.exec "SELECT * FROM (paciente INNER JOIN atiende ON paciente.clave = '#{clavePaciente}' AND paciente.clave = atiende.clavepaciente) INNER JOIN doctor ON doctor.clave = atiende.clavedoctor"
     res.each do |tuple|
+      puts tuple
       current = ReporteDoctoresPaciente.new
-      current.claveDoctor    = tuple['doctor.clave']
-      current.nombreDoctor   = tuple['doctor.nombre']
-      current.clavePaciente  = tuple['paciente.clave']
-      current.nombrePaciente = tuple['paciente.nombre']
+      current.claveDoctor    = tuple['clavedoctor']
+      current.nombreDoctor   = tuple['nombre']
+      current.clavePaciente  = tuple['clavepaciente']
+      current.nombrePaciente = tuple['nombrepaciente']
       current.fecha          = tuple['fecha']
       current.diagnostico    = tuple['diagnostico']
       current.tratamiento    = tuple['tratamiento']
-      current.fotoDoctor     = tuple['doctor.foto']
-      current.fotoPaciente   = tuple['paciente.foto']
+      current.fotoDoctor     = tuple['fotodoctor']
+      current.fotoPaciente   = tuple['fotopaciente']
       reportes << current
     end
     reportes
@@ -376,15 +379,15 @@ class DBManager
     res = @connection.exec "SELECT * FROM (doctor INNER JOIN atiende ON doctor.clave = '#{claveDoctor}' AND doctor.clave = atiende.clavedoctor) INNER JOIN paciente ON paciente.clave = atiende.clavepaciente"
     res.each do |tuple|
       current = ReportePacientesDoctor.new
-      current.claveDoctor    = tuple['doctor.clave']
-      current.nombreDoctor   = tuple['doctor.nombre']
-      current.clavePaciente  = tuple['paciente.clave']
-      current.nombrePaciente = tuple['paciente.nombre']
+      current.claveDoctor    = tuple['clavedoctor']
+      current.nombreDoctor   = tuple['nombredoctor']
+      current.clavePaciente  = tuple['clavepaciente']
+      current.nombrePaciente = tuple['nombrepaciente']
       current.fecha          = tuple['fecha']
       current.diagnostico    = tuple['diagnostico']
       current.tratamiento    = tuple['tratamiento']
-      current.fotoDoctor     = tuple['doctor.foto']
-      current.fotoPaciente   = tuple['paciente.foto']
+      current.fotoDoctor     = tuple['fotodoctor']
+      current.fotoPaciente   = tuple['fotopaciente']
       reportes << current
     end
     reportes
