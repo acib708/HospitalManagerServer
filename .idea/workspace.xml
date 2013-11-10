@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a0db8815-134c-47f4-afe6-0f377aad9ab2" name="Default" comment="Added thrift file">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/calc.thrift" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/hospital_client.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HospitalServer.iml" afterPath="$PROJECT_DIR$/HospitalServer.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/db_manager.rb" afterPath="$PROJECT_DIR$/src/model/db_manager.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dbmanager.thrift" afterPath="$PROJECT_DIR$/src/dbmanager.thrift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hospital_server.rb" afterPath="$PROJECT_DIR$/src/hospital_server.rb" />
+    <list default="true" id="a0db8815-134c-47f4-afe6-0f377aad9ab2" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/actions.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dbmanager_constants.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dbmanager_types.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="HospitalServer.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/hospital_server.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384043107126" ignored="false" />
     <file path="$PROJECT_DIR$/../Hospital/.idea/workspace.xml" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384029320116" ignored="false" />
-    <file path="/Dummy.txt" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384043211245" ignored="false" />
+    <file path="/Dummy.txt" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384043276596" ignored="false" />
     <file path="$PROJECT_DIR$/../Hospital/.gitignore" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384022960140" ignored="false" />
     <file path="/db_manager.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384042868738" ignored="false" />
     <file path="/analisis_clinico.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384027542346" ignored="false" />
@@ -100,7 +97,7 @@
       <file leaf-file-name="hospital_client.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/hospital_client.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="39" selection-start="483" selection-end="483" vertical-scroll-proportion="0.71106094">
+            <state line="21" column="40" selection-start="483" selection-end="483" vertical-scroll-proportion="0.71106094">
               <folding />
             </state>
           </provider>
@@ -674,7 +671,11 @@
       <created>1384029701622</created>
       <updated>1384029701622</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added thrift file">
+      <created>1384043284096</created>
+      <updated>1384043284096</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -876,7 +877,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hospital_client.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="39" selection-start="483" selection-end="483" vertical-scroll-proportion="0.71106094">
+        <state line="21" column="40" selection-start="483" selection-end="483" vertical-scroll-proportion="0.71106094">
           <folding />
         </state>
       </provider>
