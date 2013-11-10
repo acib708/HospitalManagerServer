@@ -95,9 +95,9 @@ service Actions{
     bool actualizarPaciente(1: Paciente paciente),
 
     //Borrar
-    bool borrarAnalisis(1: AnalisisClinico analisis),
-    bool borrarDoctor(1: Doctor doctor),
-    bool borrarPaciente(1: Paciente paciente),
+    bool borrarAnalisis(1: string claveAnalisis),
+    bool borrarDoctor(1: string claveDoctor),
+    bool borrarPaciente(1: string clavePaciente),
 
     //Capturar
     bool capturarAnalisis(1: AnalisisClinico analisis),

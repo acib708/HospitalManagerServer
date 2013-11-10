@@ -56,13 +56,13 @@ module Actions
       raise ::Thrift::ApplicationException.new(::Thrift::ApplicationException::MISSING_RESULT, 'actualizarPaciente failed: unknown result')
     end
 
-    def borrarAnalisis(analisis)
-      send_borrarAnalisis(analisis)
+    def borrarAnalisis(claveAnalisis)
+      send_borrarAnalisis(claveAnalisis)
       return recv_borrarAnalisis()
     end
 
-    def send_borrarAnalisis(analisis)
-      send_message('borrarAnalisis', BorrarAnalisis_args, :analisis => analisis)
+    def send_borrarAnalisis(claveAnalisis)
+      send_message('borrarAnalisis', BorrarAnalisis_args, :claveAnalisis => claveAnalisis)
     end
 
     def recv_borrarAnalisis()
@@ -71,13 +71,13 @@ module Actions
       raise ::Thrift::ApplicationException.new(::Thrift::ApplicationException::MISSING_RESULT, 'borrarAnalisis failed: unknown result')
     end
 
-    def borrarDoctor(doctor)
-      send_borrarDoctor(doctor)
+    def borrarDoctor(claveDoctor)
+      send_borrarDoctor(claveDoctor)
       return recv_borrarDoctor()
     end
 
-    def send_borrarDoctor(doctor)
-      send_message('borrarDoctor', BorrarDoctor_args, :doctor => doctor)
+    def send_borrarDoctor(claveDoctor)
+      send_message('borrarDoctor', BorrarDoctor_args, :claveDoctor => claveDoctor)
     end
 
     def recv_borrarDoctor()
@@ -86,13 +86,13 @@ module Actions
       raise ::Thrift::ApplicationException.new(::Thrift::ApplicationException::MISSING_RESULT, 'borrarDoctor failed: unknown result')
     end
 
-    def borrarPaciente(paciente)
-      send_borrarPaciente(paciente)
+    def borrarPaciente(clavePaciente)
+      send_borrarPaciente(clavePaciente)
       return recv_borrarPaciente()
     end
 
-    def send_borrarPaciente(paciente)
-      send_message('borrarPaciente', BorrarPaciente_args, :paciente => paciente)
+    def send_borrarPaciente(clavePaciente)
+      send_message('borrarPaciente', BorrarPaciente_args, :clavePaciente => clavePaciente)
     end
 
     def recv_borrarPaciente()
@@ -415,21 +415,21 @@ module Actions
     def process_borrarAnalisis(seqid, iprot, oprot)
       args = read_args(iprot, BorrarAnalisis_args)
       result = BorrarAnalisis_result.new()
-      result.success = @handler.borrarAnalisis(args.analisis)
+      result.success = @handler.borrarAnalisis(args.claveAnalisis)
       write_result(result, oprot, 'borrarAnalisis', seqid)
     end
 
     def process_borrarDoctor(seqid, iprot, oprot)
       args = read_args(iprot, BorrarDoctor_args)
       result = BorrarDoctor_result.new()
-      result.success = @handler.borrarDoctor(args.doctor)
+      result.success = @handler.borrarDoctor(args.claveDoctor)
       write_result(result, oprot, 'borrarDoctor', seqid)
     end
 
     def process_borrarPaciente(seqid, iprot, oprot)
       args = read_args(iprot, BorrarPaciente_args)
       result = BorrarPaciente_result.new()
-      result.success = @handler.borrarPaciente(args.paciente)
+      result.success = @handler.borrarPaciente(args.clavePaciente)
       write_result(result, oprot, 'borrarPaciente', seqid)
     end
 
@@ -668,10 +668,10 @@ module Actions
 
   class BorrarAnalisis_args
     include ::Thrift::Struct, ::Thrift::Struct_Union
-    ANALISIS = 1
+    CLAVEANALISIS = 1
 
     FIELDS = {
-      ANALISIS => {:type => ::Thrift::Types::STRUCT, :name => 'analisis', :class => ::AnalisisClinico}
+      CLAVEANALISIS => {:type => ::Thrift::Types::STRING, :name => 'claveAnalisis'}
     }
 
     def struct_fields; FIELDS; end
@@ -700,10 +700,10 @@ module Actions
 
   class BorrarDoctor_args
     include ::Thrift::Struct, ::Thrift::Struct_Union
-    DOCTOR = 1
+    CLAVEDOCTOR = 1
 
     FIELDS = {
-      DOCTOR => {:type => ::Thrift::Types::STRUCT, :name => 'doctor', :class => ::Doctor}
+      CLAVEDOCTOR => {:type => ::Thrift::Types::STRING, :name => 'claveDoctor'}
     }
 
     def struct_fields; FIELDS; end
@@ -732,10 +732,10 @@ module Actions
 
   class BorrarPaciente_args
     include ::Thrift::Struct, ::Thrift::Struct_Union
-    PACIENTE = 1
+    CLAVEPACIENTE = 1
 
     FIELDS = {
-      PACIENTE => {:type => ::Thrift::Types::STRUCT, :name => 'paciente', :class => ::Paciente}
+      CLAVEPACIENTE => {:type => ::Thrift::Types::STRING, :name => 'clavePaciente'}
     }
 
     def struct_fields; FIELDS; end
