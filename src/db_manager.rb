@@ -377,7 +377,7 @@ class DBManager
 
   def generarReportePacientesDoctor(claveDoctor) #Returns an array of ReportePacientesDoctor objects, nil on failure
     reportes = []
-    res = @connection.exec "SELECT * FROM (doctor INNER JOIN atiende ON doctor.clave = '#{claveDoctor}' AND doctor.clave = atiende.clavedoctor) INNER JOIN paciente ON paciente.clave = atiende.clavepaciente"
+    res = @connection.exec "SELECT doctor.clave AS clavedoctor, doctor.nombre AS nombredoctor, paciente.clave AS clavepaciente, paciente.nombre as nombrepaciente, fecha, diagnostico, tratamiento, doctor.foto as fotodoctor, paciente.foto as fotopaciente FROM (doctor INNER JOIN atiende ON doctor.clave = '#{claveDoctor}' AND doctor.clave = atiende.clavedoctor) INNER JOIN paciente ON paciente.clave = atiende.clavepaciente"
     res.each do |tuple|
       current = ReportePacientesDoctor.new
       current.claveDoctor    = tuple['clavedoctor']
