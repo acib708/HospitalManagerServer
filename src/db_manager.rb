@@ -1,9 +1,10 @@
 class DBManager
   require 'pg'
   require './actions'
+  require 'openssl'
 
   def initialize
-    @connection = PG::Connection.open dbname: 'hospital', host: 'localhost'
+    @connection = PG::Connection.open dbname: 'hospital', host: 'localhost', sslmode: 'require'
     self
   end
 
@@ -28,8 +29,7 @@ class DBManager
         "nombre='#{doctor.nombre}', "+
         "especialidad='#{doctor.especialidad}', "+
         "direccion='#{doctor.direccion}', "+
-        "telefono='#{doctor.telefono}', "+
-        "foto='#{doctor.foto}' "+
+        "telefono='#{doctor.telefono}' "+
         "WHERE clave='#{doctor.clave}'"
     true
   rescue PG::Error => e
@@ -43,8 +43,7 @@ class DBManager
         "clave='#{paciente.clave}', "+
         "nombre='#{paciente.nombre}', "+
         "direccion='#{paciente.direccion}', "+
-        "telefono='#{paciente.telefono}', "+
-        "foto='#{paciente.foto}' "+
+        "telefono='#{paciente.telefono}' "+
         "WHERE clave='#{paciente.clave}'"
     true
   rescue PG::Error => e
@@ -68,7 +67,7 @@ class DBManager
     puts "Borrar Doctor: #{clave}"
     @connection.exec "DELETE FROM atiende WHERE clavedoctor='#{clave}'"
     res = @connection.exec "DELETE FROM doctor WHERE clave='#{clave}'"
-    res.cmd_tuples == 1 ? true:false
+    res.cmd_tuples == 1 ? true : false
   rescue PG::Error => e
     puts "Hubo un error al borrar de la base de datos: #{e.message}"
     false
@@ -98,7 +97,7 @@ class DBManager
 
   def capturarAtiende(atiende) #Returns a boolean indicating success or failure
     puts "Capturar Atiende: #{atiende}"
-    @connection.exec "INSERT INTO atiende VALUES('#{atiende.claveDoctor}', '#{atiende.clavePaciente}', '#{atiende.fecha}', '#{atiende.tratamiento}', '#{atiende.diagnostico}', '#{atiende.fotoDoctor}', '#{atiende.fotoPaciente}')"
+    @connection.exec "INSERT INTO atiende VALUES('#{atiende.claveDoctor}', '#{atiende.clavePaciente}', '#{atiende.fecha}', '#{atiende.tratamiento}', '#{atiende.diagnostico}')"
     true
   rescue PG::Error => e
     puts "Hubo un error al capturar en la base de datos: #{e.message}"
@@ -107,7 +106,7 @@ class DBManager
 
   def capturarDoctor(doctor) #Returns a boolean indicating success or failure
     puts "Capturar Doctor: #{doctor}"
-    @connection.exec "INSERT INTO doctor VALUES('#{doctor.clave}', '#{doctor.nombre}', '#{doctor.direccion}', '#{doctor.especialidad}', '#{doctor.telefono}', '#{doctor.foto}')"
+    @connection.exec "INSERT INTO doctor VALUES('#{doctor.clave}', '#{doctor.nombre}', '#{doctor.direccion}', '#{doctor.especialidad}', '#{doctor.telefono}')"
     true
   rescue PG::Error => e
     puts "Hubo un error al capturar en la base de datos: #{e.message}"
@@ -116,7 +115,7 @@ class DBManager
 
   def capturarPaciente(paciente) #Returns a boolean indicating success or failure
     puts "Capturar Paciente: #{paciente}"
-    @connection.exec "INSERT INTO paciente VALUES('#{paciente.clave}', '#{paciente.nombre}', '#{paciente.direccion}', '#{paciente.telefono}', '#{paciente.foto}')"
+    @connection.exec "INSERT INTO paciente VALUES('#{paciente.clave}', '#{paciente.nombre}', '#{paciente.direccion}', '#{paciente.telefono}')"
     true
   rescue PG::Error => e
     puts "Hubo un error al capturar en la base de datos: #{e.message}"
@@ -125,7 +124,7 @@ class DBManager
 
   def capturarSeRealiza(seRealiza) #Returns a boolean indicating success or failure
     puts "Capturar Se Realiza: #{seRealiza}"
-    @connection.exec "INSERT INTO serealiza VALUES('#{seRealiza.claveAnalisis}', '#{seRealiza.clavePaciente}', '#{seRealiza.fechaAplic}', '#{seRealiza.fechaEntrega}', '#{seRealiza.fotoPaciente}')"
+    @connection.exec "INSERT INTO serealiza VALUES('#{seRealiza.claveAnalisis}', '#{seRealiza.clavePaciente}', '#{seRealiza.fechaAplic}', '#{seRealiza.fechaEntrega}')"
     true
   rescue PG::Error => e
     puts "Hubo un error al capturar en la base de datos: #{e.message}"
@@ -134,7 +133,7 @@ class DBManager
 
   #Consultas Generales
   def consultarAnalisis #Returns AnalisisClinico array
-    puts 'Consultar Análisis.'
+    puts 'Consultar Análisis'
     analisis = []
     res = @connection.exec 'SELECT * FROM analisisclinico'
     res.each do |tuple|
@@ -151,7 +150,7 @@ class DBManager
   end
 
   def consultarDoctores #Returns Doctor array
-    puts 'Consultar Doctores.'
+    puts 'Consultar Doctores'
     doctores = []
     res = @connection.exec 'SELECT * FROM doctor'
     res.each do |tuple|
@@ -161,7 +160,6 @@ class DBManager
       current.especialidad = tuple['especialidad']
       current.direccion    = tuple['direccion']
       current.telefono     = tuple['telefono']
-      current.foto         = tuple['foto']
       doctores << current
     end
     doctores
@@ -171,7 +169,7 @@ class DBManager
   end
 
   def consultarAtiende #Returns Atiende array
-    puts 'Consultar Atiende.'
+    puts 'Consultar Atiende'
     atiendes = []
     res = @connection.exec 'SELECT * FROM atiende'
     res.each do |tuple|
@@ -181,8 +179,6 @@ class DBManager
       current.diagnostico   = tuple['diagnostico']
       current.tratamiento   = tuple['tratamiento']
       current.fecha         = tuple['fecha']
-      current.fotoDoctor    = tuple['fotodoctor']
-      current.fotoPaciente  = tuple['fotopaciente']
       atiendes << current
     end
     atiendes
@@ -192,7 +188,7 @@ class DBManager
   end
 
   def consultarPacientes #Returns Paciente array
-    puts 'Consultar Pacientes.'
+    puts 'Consultar Pacientes'
     pacientes = []
     res = @connection.exec 'SELECT * FROM paciente'
     res.each do |tuple|
@@ -201,7 +197,6 @@ class DBManager
       current.nombre       = tuple['nombre']
       current.direccion    = tuple['direccion']
       current.telefono     = tuple['telefono']
-      current.foto         = tuple['foto']
       pacientes << current
     end
     pacientes
@@ -211,7 +206,7 @@ class DBManager
   end
 
   def consultarSeRealiza #Returns SeRealiza array
-    puts 'Consultar Se Realiza.'
+    puts 'Consultar Se Realiza'
     serealizas = []
     res = @connection.exec 'SELECT * FROM serealiza'
     res.each do |tuple|
@@ -220,7 +215,6 @@ class DBManager
       current.clavePaciente = tuple['clavepaciente']
       current.fechaAplic    = tuple['fechaaplic']
       current.fechaEntrega  = tuple['fechaentrega']
-      current.fotoPaciente  = tuple['fotopaciente']
       serealizas << current
     end
     serealizas
@@ -262,7 +256,6 @@ class DBManager
       doctor.direccion    = res[0]['direccion']
       doctor.especialidad = res[0]['especialidad']
       doctor.telefono     = res[0]['telefono']
-      doctor.foto         = res[0]['foto']
       doctor
     end
   rescue PG::Error => e
@@ -282,7 +275,6 @@ class DBManager
       paciente.nombre       = res[0]['nombre']
       paciente.direccion    = res[0]['direccion']
       paciente.telefono     = res[0]['telefono']
-      paciente.foto         = res[0]['foto']
       paciente
     end
   rescue PG::Error => e
@@ -314,13 +306,12 @@ class DBManager
     doctores = []
     res      = @connection.exec "SELECT * FROM doctor WHERE especialidad='#{especialidad}'"
     res. each do |tuple|
-      current = AnalisisClinico.new
+      current = Doctor.new
       current.clave        = tuple['clave']
       current.nombre       = tuple['nombre']
       current.direccion    = tuple['direccion']
       current.especialidad = tuple['especialidad']
       current.telefono     = tuple['telefono']
-      current.foto         = tuple['foto']
       doctores << current
     end
     doctores
@@ -330,21 +321,19 @@ class DBManager
   end
 
   #Reportes
-  #TODO: Arreglar queries de reportes
   def generarReporteAnalisisPaciente(clavePaciente) #Returns an array of ReporteAnalisisPaciente objects, nil on failure
     puts "Generar Reporte Análisis Paciente: #{clavePaciente}"
     reportes = []
-    res = @connection.exec "SELECT * FROM (paciente INNER JOIN serealiza ON paciente.clave = '#{clavePaciente}' AND paciente.clave = serealiza.clavepaciente) INNER JOIN analisisclinico ON analisisclinico.clave = serealiza.claveanalisis"
+    res = @connection.exec "SELECT analisisclinico.clave AS claveanalisis, paciente.clave AS clavepaciente, tipo, paciente.nombre AS nombrepaciente, fechaaplic, fechaentrega, descripcion FROM (paciente INNER JOIN serealiza ON paciente.clave = '#{clavePaciente}' AND paciente.clave = serealiza.clavepaciente) INNER JOIN analisisclinico ON analisisclinico.clave = serealiza.claveanalisis"
     res.each do |tuple|
       current = ReporteAnalisisPaciente.new
       current.claveAnalisis  = tuple['claveanalisis']
       current.clavePaciente  = tuple['clavepaciente']
       current.tipo           = tuple['tipo']
-      current.nombrePaciente = tuple['nombre']
+      current.nombrePaciente = tuple['nombrepaciente']
       current.fechaAplic     = tuple['fechaaplic']
       current.fechaEntrega   = tuple['fechaentrega']
       current.descripcion    = tuple['descripcion']
-      current.fotoPaciente   = tuple['foto']
       reportes << current
     end
     reportes
@@ -356,17 +345,16 @@ class DBManager
   def generarReportePacientesAnalisis(claveAnalisis) #Returns an array of ReportePacientesAnalisis objects, nil on failure
     puts "Generar Reporte Pacientes Análisis: #{claveAnalisis}"
     reportes = []
-    res = @connection.exec "SELECT * FROM (analisisclinico INNER JOIN serealiza ON analisisclinico.clave = '#{claveAnalisis}' AND analisisclinico.clave = serealiza.claveanalisis) INNER JOIN paciente ON paciente.clave = serealiza.clavepaciente"
+    res = @connection.exec "SELECT analisisclinico.clave AS claveanalisis, paciente.clave AS clavepaciente, tipo, paciente.nombre AS nombrepaciente, fechaaplic, fechaentrega, descripcion FROM (analisisclinico INNER JOIN serealiza ON analisisclinico.clave = '#{claveAnalisis}' AND analisisclinico.clave = serealiza.claveanalisis) INNER JOIN paciente ON paciente.clave = serealiza.clavepaciente"
     res.each do |tuple|
       current = ReportePacientesAnalisis.new
       current.claveAnalisis  = tuple['claveanalisis']
       current.clavePaciente  = tuple['clavepaciente']
       current.tipo           = tuple['tipo']
-      current.nombrePaciente = tuple['nombre']
+      current.nombrePaciente = tuple['nombrepaciente']
       current.fechaAplic     = tuple['fechaaplic']
       current.fechaEntrega   = tuple['fechaentrega']
       current.descripcion    = tuple['descripcion']
-      current.fotoPaciente   = tuple['foto']
       reportes << current
     end
     reportes
@@ -378,18 +366,16 @@ class DBManager
   def generarReporteDoctoresPaciente(clavePaciente) #Returns an array of ReporteDoctoresPaciente objects, nil on failure
     puts "Generar Reporte Doctores Pacientes: #{clavePaciente}"
     reportes = []
-    res = @connection.exec "SELECT * FROM (paciente INNER JOIN atiende ON paciente.clave = '#{clavePaciente}' AND paciente.clave = atiende.clavepaciente) INNER JOIN doctor ON doctor.clave = atiende.clavedoctor"
+    res = @connection.exec "SELECT doctor.clave AS clavedoctor, doctor.nombre AS nombredoctor, paciente.clave AS clavepaciente, paciente.nombre AS nombrepaciente, fecha, diagnostico, tratamiento FROM (paciente INNER JOIN atiende ON paciente.clave = '#{clavePaciente}' AND paciente.clave = atiende.clavepaciente) INNER JOIN doctor ON doctor.clave = atiende.clavedoctor"
     res.each do |tuple|
       current = ReporteDoctoresPaciente.new
       current.claveDoctor    = tuple['clavedoctor']
-      current.nombreDoctor   = tuple['nombre']
+      current.nombreDoctor   = tuple['nombredoctor']
       current.clavePaciente  = tuple['clavepaciente']
       current.nombrePaciente = tuple['nombrepaciente']
       current.fecha          = tuple['fecha']
       current.diagnostico    = tuple['diagnostico']
       current.tratamiento    = tuple['tratamiento']
-      current.fotoDoctor     = tuple['fotodoctor']
-      current.fotoPaciente   = tuple['fotopaciente']
       reportes << current
     end
     reportes
@@ -401,7 +387,7 @@ class DBManager
   def generarReportePacientesDoctor(claveDoctor) #Returns an array of ReportePacientesDoctor objects, nil on failure
     puts "Generar Reporte Pacientes Doctor: #{claveDoctor}"
     reportes = []
-    res = @connection.exec "SELECT doctor.clave AS clavedoctor, doctor.nombre AS nombredoctor, paciente.clave AS clavepaciente, paciente.nombre as nombrepaciente, fecha, diagnostico, tratamiento, doctor.foto as fotodoctor, paciente.foto as fotopaciente FROM (doctor INNER JOIN atiende ON doctor.clave = '#{claveDoctor}' AND doctor.clave = atiende.clavedoctor) INNER JOIN paciente ON paciente.clave = atiende.clavepaciente"
+    res = @connection.exec "SELECT doctor.clave AS clavedoctor, doctor.nombre AS nombredoctor, paciente.clave AS clavepaciente, paciente.nombre AS nombrepaciente, fecha, diagnostico, tratamiento FROM (doctor INNER JOIN atiende ON doctor.clave = '#{claveDoctor}' AND doctor.clave = atiende.clavedoctor) INNER JOIN paciente ON paciente.clave = atiende.clavepaciente"
     res.each do |tuple|
       current = ReportePacientesDoctor.new
       current.claveDoctor    = tuple['clavedoctor']
@@ -411,8 +397,6 @@ class DBManager
       current.fecha          = tuple['fecha']
       current.diagnostico    = tuple['diagnostico']
       current.tratamiento    = tuple['tratamiento']
-      current.fotoDoctor     = tuple['fotodoctor']
-      current.fotoPaciente   = tuple['fotopaciente']
       reportes << current
     end
     reportes

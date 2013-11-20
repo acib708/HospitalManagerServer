@@ -2,16 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0db8815-134c-47f4-afe6-0f377aad9ab2" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/createHospital.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/db_manager.rb" afterPath="$PROJECT_DIR$/src/db_manager.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hospital_server.rb" afterPath="$PROJECT_DIR$/src/hospital_server.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="HospitalServer.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/hospital_server.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384255380885" ignored="false" />
+    <file path="/hospital_server.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384907328619" ignored="false" />
     <file path="$PROJECT_DIR$/../Hospital/.idea/workspace.xml" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384029320116" ignored="false" />
-    <file path="/Dummy.txt" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384254813923" ignored="false" />
+    <file path="/Dummy.txt" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384902624880" ignored="false" />
     <file path="$PROJECT_DIR$/../Hospital/.gitignore" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384022960140" ignored="false" />
-    <file path="/db_manager.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384286738549" ignored="false" />
+    <file path="/db_manager.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384909537458" ignored="false" />
     <file path="/analisis_clinico.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384027542346" ignored="false" />
     <file path="/atiende.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384027599996" ignored="false" />
     <file path="/doctor.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384027642543" ignored="false" />
@@ -24,6 +27,67 @@
     <file path="/calc.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384041173963" ignored="false" />
     <file path="/hospital_client.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384068207747" ignored="false" />
     <file path="/actions.thrift" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384056779129" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/src/model/Atiende.java" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384287802705" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/src/actions/Capturar.java" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384291656571" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/src/model/DBManager.java" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384288158699" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/src/actions/Generar.java" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384291689347" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/src/actions/Actualizar.java" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384291641358" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/src/model/AnalisisClinico.java" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384287802705" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/src/model/SeRealiza.java" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384287802705" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/src/struts.xml" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384289381233" ignored="false" />
+    <file path="/DBManager.java" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384291574858" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/src/ServerInterface.java" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384289290977" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/web/forms/consultarEspecialidad2.jsp" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384298980319" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/web/forms/consultarAnalisisTipo2.jsp" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384292026007" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/src/thrift/SeRealiza.java" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384289381233" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/web/forms/consultarClaveAnalisis2.jsp" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384292033991" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/src/thrift/Paciente.java" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384289381233" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/web/forms/consultarClaveDoctores2.jsp" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384298980319" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/src/thrift/ReporteAnalisisPaciente.java" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384289381233" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/src/thrift/Actions.java" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384289379846" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/src/thrift/ReporteDoctoresPaciente.java" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384289381233" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/src/thrift/AnalisisClinico.java" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384289381233" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/web/forms/consultarClavePacientes2.jsp" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384292046311" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/src/thrift/Atiende.java" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384289381233" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/src/thrift/ReportePacientesAnalisis.java" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384289381233" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/src/thrift/Doctor.java" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384289381233" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/src/thrift/ReportePacientesDoctor.java" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384289381233" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/web/forms/actualizarAnalisis2.jsp" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384291971411" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/src/thrift/ServerInterface.java" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384289464214" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/web/forms/actualizarDoctor2.jsp" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384298980319" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/web/forms/actualizarPaciente2.jsp" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384291997054" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/web/Responses/rspConsultarAnalisisPaciente.jsp" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384292374545" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/web/Responses/rspConsultarPacientes.jsp" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384292388736" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/web/forms/reportesAnalisisPaciente2.jsp" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384292069478" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/web/Responses/rspConsultarDoctorGeneral.jsp" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384292384081" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/web/Responses/rspConsultarAsignaciones.jsp" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384292379514" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/web/Responses/rspAnalisisPaciente.jsp" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384292363849" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/web/Responses/rspConsultarAnalisis.jsp" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384292370752" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/web/forms/asignarPaciente.jsp" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384298980319" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/web/forms/borrarPaciente.jsp" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384289381233" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/web/forms/consultarClavePacientes.jsp" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384289381233" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/web/forms/consultarClaveDoctores.jsp" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384298980319" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/src/actions/Consultar.java" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384289491128" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/web/index.jsp" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384298980319" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/web/forms/asignarAnalisisPaciente.jsp" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384289381233" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/web/index2.jsp" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384289381233" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/web/forms/reportesAnalisisPaciente.jsp" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384289381233" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/web/forms/consultarEspecialidad.jsp" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384298980319" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/actions.thrift" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384289381233" ignored="false" />
+    <file path="/ServerInterface.java" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384289461947" ignored="false" />
+    <file path="/Consultar.java" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384289484544" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/src/thrift/DBManager.java" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384298980319" ignored="false" />
+    <file path="/fragment.java" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384290332976" ignored="false" />
+    <file path="/Capturar.java" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384291654371" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/src/actions/Borrar.java" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384291671789" ignored="false" />
+    <file path="/Borrar.java" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384291665763" ignored="false" />
+    <file path="/actualizarAnalisis2.jsp" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384291967646" ignored="false" />
+    <file path="/a.dummy" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384292395294" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/Hospital.iml" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384293134893" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/web/forms/actualizarDoctor.jsp" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384298980319" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/web/forms/borrarDoctor.jsp" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384298980319" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/web/forms/capturarDoctores.jsp" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384298980319" ignored="false" />
+    <file path="$PROJECT_DIR$/../Hospital/web/estadoCaptura.jsp" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384298980319" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,16 +151,7 @@
       <file leaf-file-name="db_manager.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/db_manager.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="409" column="61" selection-start="15928" selection-end="15928" vertical-scroll-proportion="8.061761">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="hospital_client.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hospital_client.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="59" selection-start="325" selection-end="325" vertical-scroll-proportion="0.0">
+            <state line="12" column="81" selection-start="342" selection-end="342" vertical-scroll-proportion="0.23591088">
               <folding />
             </state>
           </provider>
@@ -105,7 +160,16 @@
       <file leaf-file-name="hospital_server.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/hospital_server.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="36" selection-start="232" selection-end="232" vertical-scroll-proportion="0.0">
+            <state line="4" column="24" selection-start="85" selection-end="85" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="createHospital.sql" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/createHospital.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="48" selection-start="395" selection-end="395" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -129,8 +193,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/my_script.rb" />
-        <option value="$PROJECT_DIR$/src/gen-rb/db.rb" />
         <option value="$PROJECT_DIR$/src/gen-rb/dbmanager_constants.rb" />
         <option value="$PROJECT_DIR$/src/calc.thrift" />
         <option value="$PROJECT_DIR$/src/calc.rb" />
@@ -143,6 +205,8 @@
         <option value="$PROJECT_DIR$/src/actions_types.rb" />
         <option value="$PROJECT_DIR$/src/actions_constants.rb" />
         <option value="$PROJECT_DIR$/src/hospital_client.rb" />
+        <option value="$PROJECT_DIR$/createHospital.sql" />
+        <option value="$PROJECT_DIR$/server.key" />
         <option value="$PROJECT_DIR$/src/hospital_server.rb" />
         <option value="$PROJECT_DIR$/src/db_manager.rb" />
       </list>
@@ -476,6 +540,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -510,8 +576,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -528,14 +592,15 @@
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="FullScreen" value="true" />
     <property name="MemberChooser.showClasses" value="true" />
+    <property name="FullScreen" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/thrift_files" />
       <recent name="$PROJECT_DIR$/src/model" />
@@ -700,19 +765,6 @@
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -739,6 +791,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -878,7 +943,11 @@
       <created>1384254821940</created>
       <updated>1384254821940</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Added method execution logging to the server console.">
+      <created>1384286776403</created>
+      <updated>1384286776403</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -902,7 +971,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -916,19 +985,19 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32917705" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2482066" sideWeight="0.6770574" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32294264" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2482066" sideWeight="0.32462686" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.67537314" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -974,7 +1043,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed generarReportePacientesDoctor SQL query" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added method execution logging to the server console." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1001,6 +1070,7 @@
     <MESSAGE value="Final server." />
     <MESSAGE value="Final server" />
     <MESSAGE value="Fixed generarReportePacientesDoctor SQL query" />
+    <MESSAGE value="Added method execution logging to the server console." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1010,44 +1080,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/hospital_client.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="19" selection-start="667" selection-end="677" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hospital_server.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="23" selection-start="395" selection-end="395" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hospital_server.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="11" selection-start="356" selection-end="356" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions.thrift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/db_manager.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="285" column="7" selection-start="10057" selection-end="10057" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HospitalServer.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
@@ -1083,23 +1115,68 @@
         <state line="87" column="11" selection-start="1814" selection-end="1814" vertical-scroll-proportion="0.57474226" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hospital_client.rb">
+    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="59" selection-start="325" selection-end="325" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hospital_client.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="59" selection-start="325" selection-end="325" vertical-scroll-proportion="0.26785713">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.csr">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.crt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.key">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="0" selection-start="887" selection-end="887" vertical-scroll-proportion="0.30906594">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/createHospital.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="48" selection-start="395" selection-end="395" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/hospital_server.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="36" selection-start="232" selection-end="232" vertical-scroll-proportion="0.0">
+        <state line="4" column="24" selection-start="85" selection-end="85" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/db_manager.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="409" column="61" selection-start="15928" selection-end="15928" vertical-scroll-proportion="8.061761">
+        <state line="12" column="81" selection-start="342" selection-end="342" vertical-scroll-proportion="0.23591088">
           <folding />
         </state>
       </provider>
