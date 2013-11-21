@@ -2,15 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0db8815-134c-47f4-afe6-0f377aad9ab2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/createHospitalNewBecauseWeNeedToChangeTheDefinitionInOrderToInsertEncryptedData.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/db_manager.rb" afterPath="$PROJECT_DIR$/src/db_manager.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="HospitalServer.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/hospital_server.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384907328619" ignored="false" />
     <file path="$PROJECT_DIR$/../Hospital/.idea/workspace.xml" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384029320116" ignored="false" />
-    <file path="/Dummy.txt" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384996154245" ignored="false" />
+    <file path="/Dummy.txt" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384999542185" ignored="false" />
     <file path="$PROJECT_DIR$/../Hospital/.gitignore" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384022960140" ignored="false" />
     <file path="/db_manager.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384999217123" ignored="false" />
     <file path="/analisis_clinico.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384027542346" ignored="false" />
@@ -970,7 +968,11 @@
       <created>1384910317291</created>
       <updated>1384910317291</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Added SSL Connection to PostgreSQL">
+      <created>1384999549292</created>
+      <updated>1384999549292</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1008,6 +1010,7 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32917705" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1020,7 +1023,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
