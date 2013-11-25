@@ -4,7 +4,8 @@ class DBManager
   require 'openssl'
 
   def initialize
-    @connection = PG::Connection.open dbname: 'hospital', host: 'localhost', sslmode: 'require'
+    #@connection = PG::Connection.open dbname: 'hospital', host: 'localhost', sslmode: 'require'
+    @connection = PG::Connection.open dbname: 'hospital', host: 'localhost'
     @password   = (OpenSSL::Digest.new 'SHA256').digest 'password'
     @iv         = (OpenSSL::Digest.new 'SHA256').digest 'iv'
     self
@@ -420,6 +421,19 @@ class DBManager
     reportes
   rescue PG::Error => e
     puts "Hubo un error al generar reporte: #{e.message}"
+    nil
+  end
+
+  def consultarEspecialidades
+    puts 'Generar especialidades'
+    especialidades = []
+    res = @connection.exec "SELECT DISTINCT especialidad FROM doctor"
+    res.each do |tuple|
+      especialidades << (decrypt tuple['especialidad'])
+    end
+    especialidades
+  rescue PG::Error => e
+    puts "Hubo un error al generar especialidades #{e.message}"
     nil
   end
 end

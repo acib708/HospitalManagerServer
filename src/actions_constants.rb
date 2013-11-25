@@ -5,5 +5,5 @@
 #
 
 require 'thrift'
-require 'actions_types'
+require './actions_types'
 

@@ -126,5 +126,8 @@ service Actions{
     list<ReporteAnalisisPaciente> generarReporteAnalisisPaciente(1: string clavePaciente),
     list<ReportePacientesAnalisis> generarReportePacientesAnalisis(1: string claveAnalisis),
     list<ReporteDoctoresPaciente> generarReporteDoctoresPaciente(1: string clavePaciente),
-    list<ReportePacientesDoctor> generarReportePacientesDoctor(1: string claveDoctor)
+    list<ReportePacientesDoctor> generarReportePacientesDoctor(1: string claveDoctor),
+
+    //Consultas auxiliares
+    list<string> consultarEspecialidades()
 }

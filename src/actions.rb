@@ -386,6 +386,21 @@ module Actions
       raise ::Thrift::ApplicationException.new(::Thrift::ApplicationException::MISSING_RESULT, 'generarReportePacientesDoctor failed: unknown result')
     end
 
+    def consultarEspecialidades()
+      send_consultarEspecialidades()
+      return recv_consultarEspecialidades()
+    end
+
+    def send_consultarEspecialidades()
+      send_message('consultarEspecialidades', ConsultarEspecialidades_args)
+    end
+
+    def recv_consultarEspecialidades()
+      result = receive_message(ConsultarEspecialidades_result)
+      return result.success unless result.success.nil?
+      raise ::Thrift::ApplicationException.new(::Thrift::ApplicationException::MISSING_RESULT, 'consultarEspecialidades failed: unknown result')
+    end
+
   end
 
   class Processor
@@ -566,6 +581,13 @@ module Actions
       write_result(result, oprot, 'generarReportePacientesDoctor', seqid)
     end
 
+    def process_consultarEspecialidades(seqid, iprot, oprot)
+      args = read_args(iprot, ConsultarEspecialidades_args)
+      result = ConsultarEspecialidades_result.new()
+      result.success = @handler.consultarEspecialidades()
+      write_result(result, oprot, 'consultarEspecialidades', seqid)
+    end
+
   end
 
   # HELPER FUNCTIONS AND STRUCTURES
@@ -575,7 +597,7 @@ module Actions
     ANALISIS = 1
 
     FIELDS = {
-        ANALISIS => {:type => ::Thrift::Types::STRUCT, :name => 'analisis', :class => ::AnalisisClinico}
+      ANALISIS => {:type => ::Thrift::Types::STRUCT, :name => 'analisis', :class => ::AnalisisClinico}
     }
 
     def struct_fields; FIELDS; end
@@ -591,7 +613,7 @@ module Actions
     SUCCESS = 0
 
     FIELDS = {
-        SUCCESS => {:type => ::Thrift::Types::BOOL, :name => 'success'}
+      SUCCESS => {:type => ::Thrift::Types::BOOL, :name => 'success'}
     }
 
     def struct_fields; FIELDS; end
@@ -607,7 +629,7 @@ module Actions
     DOCTOR = 1
 
     FIELDS = {
-        DOCTOR => {:type => ::Thrift::Types::STRUCT, :name => 'doctor', :class => ::Doctor}
+      DOCTOR => {:type => ::Thrift::Types::STRUCT, :name => 'doctor', :class => ::Doctor}
     }
 
     def struct_fields; FIELDS; end
@@ -623,7 +645,7 @@ module Actions
     SUCCESS = 0
 
     FIELDS = {
-        SUCCESS => {:type => ::Thrift::Types::BOOL, :name => 'success'}
+      SUCCESS => {:type => ::Thrift::Types::BOOL, :name => 'success'}
     }
 
     def struct_fields; FIELDS; end
@@ -639,7 +661,7 @@ module Actions
     PACIENTE = 1
 
     FIELDS = {
-        PACIENTE => {:type => ::Thrift::Types::STRUCT, :name => 'paciente', :class => ::Paciente}
+      PACIENTE => {:type => ::Thrift::Types::STRUCT, :name => 'paciente', :class => ::Paciente}
     }
 
     def struct_fields; FIELDS; end
@@ -655,7 +677,7 @@ module Actions
     SUCCESS = 0
 
     FIELDS = {
-        SUCCESS => {:type => ::Thrift::Types::BOOL, :name => 'success'}
+      SUCCESS => {:type => ::Thrift::Types::BOOL, :name => 'success'}
     }
 
     def struct_fields; FIELDS; end
@@ -671,7 +693,7 @@ module Actions
     CLAVEANALISIS = 1
 
     FIELDS = {
-        CLAVEANALISIS => {:type => ::Thrift::Types::STRING, :name => 'claveAnalisis'}
+      CLAVEANALISIS => {:type => ::Thrift::Types::STRING, :name => 'claveAnalisis'}
     }
 
     def struct_fields; FIELDS; end
@@ -687,7 +709,7 @@ module Actions
     SUCCESS = 0
 
     FIELDS = {
-        SUCCESS => {:type => ::Thrift::Types::BOOL, :name => 'success'}
+      SUCCESS => {:type => ::Thrift::Types::BOOL, :name => 'success'}
     }
 
     def struct_fields; FIELDS; end
@@ -703,7 +725,7 @@ module Actions
     CLAVEDOCTOR = 1
 
     FIELDS = {
-        CLAVEDOCTOR => {:type => ::Thrift::Types::STRING, :name => 'claveDoctor'}
+      CLAVEDOCTOR => {:type => ::Thrift::Types::STRING, :name => 'claveDoctor'}
     }
 
     def struct_fields; FIELDS; end
@@ -719,7 +741,7 @@ module Actions
     SUCCESS = 0
 
     FIELDS = {
-        SUCCESS => {:type => ::Thrift::Types::BOOL, :name => 'success'}
+      SUCCESS => {:type => ::Thrift::Types::BOOL, :name => 'success'}
     }
 
     def struct_fields; FIELDS; end
@@ -735,7 +757,7 @@ module Actions
     CLAVEPACIENTE = 1
 
     FIELDS = {
-        CLAVEPACIENTE => {:type => ::Thrift::Types::STRING, :name => 'clavePaciente'}
+      CLAVEPACIENTE => {:type => ::Thrift::Types::STRING, :name => 'clavePaciente'}
     }
 
     def struct_fields; FIELDS; end
@@ -751,7 +773,7 @@ module Actions
     SUCCESS = 0
 
     FIELDS = {
-        SUCCESS => {:type => ::Thrift::Types::BOOL, :name => 'success'}
+      SUCCESS => {:type => ::Thrift::Types::BOOL, :name => 'success'}
     }
 
     def struct_fields; FIELDS; end
@@ -767,7 +789,7 @@ module Actions
     ANALISIS = 1
 
     FIELDS = {
-        ANALISIS => {:type => ::Thrift::Types::STRUCT, :name => 'analisis', :class => ::AnalisisClinico}
+      ANALISIS => {:type => ::Thrift::Types::STRUCT, :name => 'analisis', :class => ::AnalisisClinico}
     }
 
     def struct_fields; FIELDS; end
@@ -783,7 +805,7 @@ module Actions
     SUCCESS = 0
 
     FIELDS = {
-        SUCCESS => {:type => ::Thrift::Types::BOOL, :name => 'success'}
+      SUCCESS => {:type => ::Thrift::Types::BOOL, :name => 'success'}
     }
 
     def struct_fields; FIELDS; end
@@ -799,7 +821,7 @@ module Actions
     DOCTOR = 1
 
     FIELDS = {
-        DOCTOR => {:type => ::Thrift::Types::STRUCT, :name => 'doctor', :class => ::Doctor}
+      DOCTOR => {:type => ::Thrift::Types::STRUCT, :name => 'doctor', :class => ::Doctor}
     }
 
     def struct_fields; FIELDS; end
@@ -815,7 +837,7 @@ module Actions
     SUCCESS = 0
 
     FIELDS = {
-        SUCCESS => {:type => ::Thrift::Types::BOOL, :name => 'success'}
+      SUCCESS => {:type => ::Thrift::Types::BOOL, :name => 'success'}
     }
 
     def struct_fields; FIELDS; end
@@ -831,7 +853,7 @@ module Actions
     PACIENTE = 1
 
     FIELDS = {
-        PACIENTE => {:type => ::Thrift::Types::STRUCT, :name => 'paciente', :class => ::Paciente}
+      PACIENTE => {:type => ::Thrift::Types::STRUCT, :name => 'paciente', :class => ::Paciente}
     }
 
     def struct_fields; FIELDS; end
@@ -847,7 +869,7 @@ module Actions
     SUCCESS = 0
 
     FIELDS = {
-        SUCCESS => {:type => ::Thrift::Types::BOOL, :name => 'success'}
+      SUCCESS => {:type => ::Thrift::Types::BOOL, :name => 'success'}
     }
 
     def struct_fields; FIELDS; end
@@ -863,7 +885,7 @@ module Actions
     ATIENDE = 1
 
     FIELDS = {
-        ATIENDE => {:type => ::Thrift::Types::STRUCT, :name => 'atiende', :class => ::Atiende}
+      ATIENDE => {:type => ::Thrift::Types::STRUCT, :name => 'atiende', :class => ::Atiende}
     }
 
     def struct_fields; FIELDS; end
@@ -879,7 +901,7 @@ module Actions
     SUCCESS = 0
 
     FIELDS = {
-        SUCCESS => {:type => ::Thrift::Types::BOOL, :name => 'success'}
+      SUCCESS => {:type => ::Thrift::Types::BOOL, :name => 'success'}
     }
 
     def struct_fields; FIELDS; end
@@ -895,7 +917,7 @@ module Actions
     SEREALIZA = 1
 
     FIELDS = {
-        SEREALIZA => {:type => ::Thrift::Types::STRUCT, :name => 'seRealiza', :class => ::SeRealiza}
+      SEREALIZA => {:type => ::Thrift::Types::STRUCT, :name => 'seRealiza', :class => ::SeRealiza}
     }
 
     def struct_fields; FIELDS; end
@@ -911,7 +933,7 @@ module Actions
     SUCCESS = 0
 
     FIELDS = {
-        SUCCESS => {:type => ::Thrift::Types::BOOL, :name => 'success'}
+      SUCCESS => {:type => ::Thrift::Types::BOOL, :name => 'success'}
     }
 
     def struct_fields; FIELDS; end
@@ -942,7 +964,7 @@ module Actions
     SUCCESS = 0
 
     FIELDS = {
-        SUCCESS => {:type => ::Thrift::Types::LIST, :name => 'success', :element => {:type => ::Thrift::Types::STRUCT, :class => ::AnalisisClinico}}
+      SUCCESS => {:type => ::Thrift::Types::LIST, :name => 'success', :element => {:type => ::Thrift::Types::STRUCT, :class => ::AnalisisClinico}}
     }
 
     def struct_fields; FIELDS; end
@@ -973,7 +995,7 @@ module Actions
     SUCCESS = 0
 
     FIELDS = {
-        SUCCESS => {:type => ::Thrift::Types::LIST, :name => 'success', :element => {:type => ::Thrift::Types::STRUCT, :class => ::Atiende}}
+      SUCCESS => {:type => ::Thrift::Types::LIST, :name => 'success', :element => {:type => ::Thrift::Types::STRUCT, :class => ::Atiende}}
     }
 
     def struct_fields; FIELDS; end
@@ -1004,7 +1026,7 @@ module Actions
     SUCCESS = 0
 
     FIELDS = {
-        SUCCESS => {:type => ::Thrift::Types::LIST, :name => 'success', :element => {:type => ::Thrift::Types::STRUCT, :class => ::Doctor}}
+      SUCCESS => {:type => ::Thrift::Types::LIST, :name => 'success', :element => {:type => ::Thrift::Types::STRUCT, :class => ::Doctor}}
     }
 
     def struct_fields; FIELDS; end
@@ -1035,7 +1057,7 @@ module Actions
     SUCCESS = 0
 
     FIELDS = {
-        SUCCESS => {:type => ::Thrift::Types::LIST, :name => 'success', :element => {:type => ::Thrift::Types::STRUCT, :class => ::Paciente}}
+      SUCCESS => {:type => ::Thrift::Types::LIST, :name => 'success', :element => {:type => ::Thrift::Types::STRUCT, :class => ::Paciente}}
     }
 
     def struct_fields; FIELDS; end
@@ -1066,7 +1088,7 @@ module Actions
     SUCCESS = 0
 
     FIELDS = {
-        SUCCESS => {:type => ::Thrift::Types::LIST, :name => 'success', :element => {:type => ::Thrift::Types::STRUCT, :class => ::SeRealiza}}
+      SUCCESS => {:type => ::Thrift::Types::LIST, :name => 'success', :element => {:type => ::Thrift::Types::STRUCT, :class => ::SeRealiza}}
     }
 
     def struct_fields; FIELDS; end
@@ -1082,7 +1104,7 @@ module Actions
     CLAVE = 1
 
     FIELDS = {
-        CLAVE => {:type => ::Thrift::Types::STRING, :name => 'clave'}
+      CLAVE => {:type => ::Thrift::Types::STRING, :name => 'clave'}
     }
 
     def struct_fields; FIELDS; end
@@ -1098,7 +1120,7 @@ module Actions
     SUCCESS = 0
 
     FIELDS = {
-        SUCCESS => {:type => ::Thrift::Types::STRUCT, :name => 'success', :class => ::AnalisisClinico}
+      SUCCESS => {:type => ::Thrift::Types::STRUCT, :name => 'success', :class => ::AnalisisClinico}
     }
 
     def struct_fields; FIELDS; end
@@ -1114,7 +1136,7 @@ module Actions
     CLAVE = 1
 
     FIELDS = {
-        CLAVE => {:type => ::Thrift::Types::STRING, :name => 'clave'}
+      CLAVE => {:type => ::Thrift::Types::STRING, :name => 'clave'}
     }
 
     def struct_fields; FIELDS; end
@@ -1130,7 +1152,7 @@ module Actions
     SUCCESS = 0
 
     FIELDS = {
-        SUCCESS => {:type => ::Thrift::Types::STRUCT, :name => 'success', :class => ::Paciente}
+      SUCCESS => {:type => ::Thrift::Types::STRUCT, :name => 'success', :class => ::Paciente}
     }
 
     def struct_fields; FIELDS; end
@@ -1146,7 +1168,7 @@ module Actions
     CLAVE = 1
 
     FIELDS = {
-        CLAVE => {:type => ::Thrift::Types::STRING, :name => 'clave'}
+      CLAVE => {:type => ::Thrift::Types::STRING, :name => 'clave'}
     }
 
     def struct_fields; FIELDS; end
@@ -1162,7 +1184,7 @@ module Actions
     SUCCESS = 0
 
     FIELDS = {
-        SUCCESS => {:type => ::Thrift::Types::STRUCT, :name => 'success', :class => ::Doctor}
+      SUCCESS => {:type => ::Thrift::Types::STRUCT, :name => 'success', :class => ::Doctor}
     }
 
     def struct_fields; FIELDS; end
@@ -1178,7 +1200,7 @@ module Actions
     TIPO = 1
 
     FIELDS = {
-        TIPO => {:type => ::Thrift::Types::STRING, :name => 'tipo'}
+      TIPO => {:type => ::Thrift::Types::STRING, :name => 'tipo'}
     }
 
     def struct_fields; FIELDS; end
@@ -1194,7 +1216,7 @@ module Actions
     SUCCESS = 0
 
     FIELDS = {
-        SUCCESS => {:type => ::Thrift::Types::LIST, :name => 'success', :element => {:type => ::Thrift::Types::STRUCT, :class => ::AnalisisClinico}}
+      SUCCESS => {:type => ::Thrift::Types::LIST, :name => 'success', :element => {:type => ::Thrift::Types::STRUCT, :class => ::AnalisisClinico}}
     }
 
     def struct_fields; FIELDS; end
@@ -1210,7 +1232,7 @@ module Actions
     ESPECIALIDAD = 1
 
     FIELDS = {
-        ESPECIALIDAD => {:type => ::Thrift::Types::STRING, :name => 'especialidad'}
+      ESPECIALIDAD => {:type => ::Thrift::Types::STRING, :name => 'especialidad'}
     }
 
     def struct_fields; FIELDS; end
@@ -1226,7 +1248,7 @@ module Actions
     SUCCESS = 0
 
     FIELDS = {
-        SUCCESS => {:type => ::Thrift::Types::LIST, :name => 'success', :element => {:type => ::Thrift::Types::STRUCT, :class => ::Doctor}}
+      SUCCESS => {:type => ::Thrift::Types::LIST, :name => 'success', :element => {:type => ::Thrift::Types::STRUCT, :class => ::Doctor}}
     }
 
     def struct_fields; FIELDS; end
@@ -1242,7 +1264,7 @@ module Actions
     CLAVEPACIENTE = 1
 
     FIELDS = {
-        CLAVEPACIENTE => {:type => ::Thrift::Types::STRING, :name => 'clavePaciente'}
+      CLAVEPACIENTE => {:type => ::Thrift::Types::STRING, :name => 'clavePaciente'}
     }
 
     def struct_fields; FIELDS; end
@@ -1258,7 +1280,7 @@ module Actions
     SUCCESS = 0
 
     FIELDS = {
-        SUCCESS => {:type => ::Thrift::Types::LIST, :name => 'success', :element => {:type => ::Thrift::Types::STRUCT, :class => ::ReporteAnalisisPaciente}}
+      SUCCESS => {:type => ::Thrift::Types::LIST, :name => 'success', :element => {:type => ::Thrift::Types::STRUCT, :class => ::ReporteAnalisisPaciente}}
     }
 
     def struct_fields; FIELDS; end
@@ -1274,7 +1296,7 @@ module Actions
     CLAVEANALISIS = 1
 
     FIELDS = {
-        CLAVEANALISIS => {:type => ::Thrift::Types::STRING, :name => 'claveAnalisis'}
+      CLAVEANALISIS => {:type => ::Thrift::Types::STRING, :name => 'claveAnalisis'}
     }
 
     def struct_fields; FIELDS; end
@@ -1290,7 +1312,7 @@ module Actions
     SUCCESS = 0
 
     FIELDS = {
-        SUCCESS => {:type => ::Thrift::Types::LIST, :name => 'success', :element => {:type => ::Thrift::Types::STRUCT, :class => ::ReportePacientesAnalisis}}
+      SUCCESS => {:type => ::Thrift::Types::LIST, :name => 'success', :element => {:type => ::Thrift::Types::STRUCT, :class => ::ReportePacientesAnalisis}}
     }
 
     def struct_fields; FIELDS; end
@@ -1306,7 +1328,7 @@ module Actions
     CLAVEPACIENTE = 1
 
     FIELDS = {
-        CLAVEPACIENTE => {:type => ::Thrift::Types::STRING, :name => 'clavePaciente'}
+      CLAVEPACIENTE => {:type => ::Thrift::Types::STRING, :name => 'clavePaciente'}
     }
 
     def struct_fields; FIELDS; end
@@ -1322,7 +1344,7 @@ module Actions
     SUCCESS = 0
 
     FIELDS = {
-        SUCCESS => {:type => ::Thrift::Types::LIST, :name => 'success', :element => {:type => ::Thrift::Types::STRUCT, :class => ::ReporteDoctoresPaciente}}
+      SUCCESS => {:type => ::Thrift::Types::LIST, :name => 'success', :element => {:type => ::Thrift::Types::STRUCT, :class => ::ReporteDoctoresPaciente}}
     }
 
     def struct_fields; FIELDS; end
@@ -1338,7 +1360,7 @@ module Actions
     CLAVEDOCTOR = 1
 
     FIELDS = {
-        CLAVEDOCTOR => {:type => ::Thrift::Types::STRING, :name => 'claveDoctor'}
+      CLAVEDOCTOR => {:type => ::Thrift::Types::STRING, :name => 'claveDoctor'}
     }
 
     def struct_fields; FIELDS; end
@@ -1354,7 +1376,38 @@ module Actions
     SUCCESS = 0
 
     FIELDS = {
-        SUCCESS => {:type => ::Thrift::Types::LIST, :name => 'success', :element => {:type => ::Thrift::Types::STRUCT, :class => ::ReportePacientesDoctor}}
+      SUCCESS => {:type => ::Thrift::Types::LIST, :name => 'success', :element => {:type => ::Thrift::Types::STRUCT, :class => ::ReportePacientesDoctor}}
+    }
+
+    def struct_fields; FIELDS; end
+
+    def validate
+    end
+
+    ::Thrift::Struct.generate_accessors self
+  end
+
+  class ConsultarEspecialidades_args
+    include ::Thrift::Struct, ::Thrift::Struct_Union
+
+    FIELDS = {
+
+    }
+
+    def struct_fields; FIELDS; end
+
+    def validate
+    end
+
+    ::Thrift::Struct.generate_accessors self
+  end
+
+  class ConsultarEspecialidades_result
+    include ::Thrift::Struct, ::Thrift::Struct_Union
+    SUCCESS = 0
+
+    FIELDS = {
+      SUCCESS => {:type => ::Thrift::Types::LIST, :name => 'success', :element => {:type => ::Thrift::Types::STRING}}
     }
 
     def struct_fields; FIELDS; end
