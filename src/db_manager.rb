@@ -12,21 +12,6 @@ class DBManager
     self
   end
 
-  ##Data encryption and decryption
-  #def encrypt(data)
-  #  cipher = OpenSSL::Cipher.new 'AES-256-CBC'
-  #  cipher.encrypt
-  #  cipher.key, cipher.iv = @password, @iv
-  #  (cipher.update(data) + cipher.final).unpack('H*')[0]
-  #end
-  #
-  #def encrypt(data)
-  #  data_to_decrypt, decipher = [data].pack('H*'), OpenSSL::Cipher.new('AES-256-CBC')
-  #  decipher.decrypt
-  #  decipher.iv, decipher.key = @iv, @password
-  #  (decipher.update(data_to_decrypt) + decipher.final).force_encoding 'UTF-8'
-  #end
-
   #Actualizar
   def actualizarAnalisis(analisis) #Returns boolean indicating success or failure
     puts "Actualizar Análisis: #{analisis}"
