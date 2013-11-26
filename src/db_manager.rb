@@ -4,6 +4,7 @@ class DBManager
   require 'openssl'
 
   def initialize
+
     #@connection = PG::Connection.open dbname: 'hospital', host: 'localhost', sslmode: 'require'
     @connection = PG::Connection.open dbname: 'hospital', host: 'localhost'
     @password   = (OpenSSL::Digest.new 'SHA256').digest 'password'
