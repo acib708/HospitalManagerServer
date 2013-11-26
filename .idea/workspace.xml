@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0db8815-134c-47f4-afe6-0f377aad9ab2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/populate_db.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/createHospital.sql" afterPath="$PROJECT_DIR$/createHospital.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/createHospitalNewBecauseWeNeedToChangeTheDefinitionInOrderToInsertEncryptedData.sql" afterPath="$PROJECT_DIR$/createHospitalNewBecauseWeNeedToChangeTheDefinitionInOrderToInsertEncryptedData.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/db_manager.rb" afterPath="$PROJECT_DIR$/src/db_manager.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -12,7 +9,7 @@
     <ignored path=".idea/workspace.xml" />
     <file path="/hospital_server.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384907328619" ignored="false" />
     <file path="$PROJECT_DIR$/../Hospital/.idea/workspace.xml" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384029320116" ignored="false" />
-    <file path="/Dummy.txt" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1385440719321" ignored="false" />
+    <file path="/Dummy.txt" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1385447440203" ignored="false" />
     <file path="$PROJECT_DIR$/../Hospital/.gitignore" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384022960140" ignored="false" />
     <file path="/db_manager.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1385407321422" ignored="false" />
     <file path="/analisis_clinico.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384027542346" ignored="false" />
@@ -177,7 +174,17 @@
     <favorites_list name="HospitalServer" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="db_manager.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/db_manager.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="40" selection-start="293" selection-end="293" vertical-scroll-proportion="0.17739816">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -206,11 +213,11 @@
         <option value="$PROJECT_DIR$/src/actions.rb" />
         <option value="$PROJECT_DIR$/src/actions_constants.rb" />
         <option value="$PROJECT_DIR$/src/testing.rb" />
-        <option value="$PROJECT_DIR$/src/db_manager.rb" />
         <option value="$PROJECT_DIR$/createHospital.sql" />
         <option value="$PROJECT_DIR$/src/partial.rb" />
         <option value="$PROJECT_DIR$/src/populate_db.rb" />
         <option value="$PROJECT_DIR$/createHospitalNewBecauseWeNeedToChangeTheDefinitionInOrderToInsertEncryptedData.sql" />
+        <option value="$PROJECT_DIR$/src/db_manager.rb" />
       </list>
     </option>
   </component>
@@ -1027,7 +1034,11 @@
       <created>1385440721495</created>
       <updated>1385440721495</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Create populate_db.rb script">
+      <created>1385447445942</created>
+      <updated>1385447445942</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1052,7 +1063,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1073,7 +1084,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18364419" sideWeight="0.4713217" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18364419" sideWeight="0.4713217" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5286783" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1123,7 +1134,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed encoding issue after decryption." />
+    <option name="LAST_COMMIT_MESSAGE" value="Create populate_db.rb script" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1154,6 +1165,7 @@
     <MESSAGE value="Added SSL Connection to PostgreSQL" />
     <MESSAGE value="Re-generated thrift files to add consultarEspecialidades" />
     <MESSAGE value="Fixed encoding issue after decryption." />
+    <MESSAGE value="Create populate_db.rb script" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1226,13 +1238,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/partial.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="83" selection-start="2074" selection-end="2074" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/populate_db.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="254" column="100" selection-start="39656" selection-end="39656" vertical-scroll-proportion="5.0065703">
@@ -1259,7 +1264,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/db_manager.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="50" selection-start="750" selection-end="750" vertical-scroll-proportion="-0.07884362">
+        <state line="9" column="40" selection-start="293" selection-end="293" vertical-scroll-proportion="0.17739816">
           <folding />
         </state>
       </provider>

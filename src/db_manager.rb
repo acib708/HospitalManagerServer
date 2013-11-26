@@ -171,7 +171,6 @@ class DBManager
     doctores = []
     res = @connection.exec 'SELECT * FROM doctor'
     res.each do |tuple|
-      puts decrypt tuple['nombre']
       current = Doctor.new
       current.clave = decrypt tuple['clave']
       current.nombre = decrypt tuple['nombre']
