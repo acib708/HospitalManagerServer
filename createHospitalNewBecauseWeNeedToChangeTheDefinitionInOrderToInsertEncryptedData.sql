@@ -38,3 +38,8 @@ CREATE TABLE AnalisisClinico(
   descripcion text ,
   PRIMARY KEY(clave)
 );
+
+ALTER TABLE Atiende   ADD FOREIGN KEY(clavePaciente) REFERENCES Paciente(clave);
+ALTER TABLE Atiende   ADD FOREIGN KEY(claveDoctor)   REFERENCES Doctor(clave);
+ALTER TABLE SeRealiza ADD FOREIGN KEY(clavePaciente) REFERENCES Paciente(clave);
+ALTER TABLE SeRealiza ADD FOREIGN KEY(claveAnalisis) REFERENCES AnalisisClinico(clave);
