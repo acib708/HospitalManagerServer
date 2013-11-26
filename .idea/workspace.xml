@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0db8815-134c-47f4-afe6-0f377aad9ab2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/testing.rb" afterPath="$PROJECT_DIR$/src/testing.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/db_manager.rb" afterPath="$PROJECT_DIR$/src/db_manager.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="HospitalServer.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/hospital_server.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384907328619" ignored="false" />
     <file path="$PROJECT_DIR$/../Hospital/.idea/workspace.xml" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384029320116" ignored="false" />
-    <file path="/Dummy.txt" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1385439262622" ignored="false" />
+    <file path="/Dummy.txt" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1385440349191" ignored="false" />
     <file path="$PROJECT_DIR$/../Hospital/.gitignore" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384022960140" ignored="false" />
     <file path="/db_manager.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1385407321422" ignored="false" />
     <file path="/analisis_clinico.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384027542346" ignored="false" />
@@ -88,7 +88,7 @@
     <file path="/createHospitalNewBecauseWeNeedToChangeTheDefinitionInOrderToInsertEncryptedData.sql" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384993463328" ignored="false" />
     <file path="$USER_HOME$/Tec/2013 - 2/Desarrollo de Aplicaciones Web/Libro/web/index.jsp" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1385043423510" ignored="false" />
     <file path="$USER_HOME$/Tec/2013 - 2/Desarrollo de Aplicaciones Web/Libro/web/WEB-INF/jboss-web.xml" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1385043411272" ignored="false" />
-    <file path="$PROJECT_DIR$/../HospitalAndroid/src/gomez/marcelo/HospitalAndroid/thrift/ServerInterface.java" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1385095734154" ignored="false" />
+    <file path="$PROJECT_DIR$/../HospitalAndroid/src/gomez/marcelo/HospitalAndroid/thrift/ServerInterface.java" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1385440311420" ignored="false" />
     <file path="/testing.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1385439568464" ignored="false" />
     <file path="$PROJECT_DIR$/../HospitalManagerWeb/.idea/workspace.xml" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1385434873477" ignored="false" />
     <file path="$PROJECT_DIR$/../HospitalManagerWeb/src/thrift/Paciente.java" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1385408075055" ignored="false" />
@@ -175,7 +175,7 @@
       <file leaf-file-name="db_manager.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/db_manager.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="38" selection-start="408" selection-end="408" vertical-scroll-proportion="0.29500756">
+            <state line="15" column="19" selection-start="462" selection-end="462" vertical-scroll-proportion="0.34039333">
               <folding />
             </state>
           </provider>
@@ -1000,7 +1000,15 @@
       <created>1385409094779</created>
       <updated>1385409094779</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Re-generated thrift files to add consultarEspecialidades">
+      <created>1385440318277</created>
+      <updated>1385440318277</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Fixed encoding issue after decryption.">
+      <created>1385440355832</created>
+      <updated>1385440355832</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1038,6 +1046,7 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32917705" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1050,7 +1059,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1096,7 +1104,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Re-generated thrift files to add consultarEspecialidades" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed encoding issue after decryption." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1126,6 +1134,7 @@
     <MESSAGE value="Added method execution logging to the server console." />
     <MESSAGE value="Added SSL Connection to PostgreSQL" />
     <MESSAGE value="Re-generated thrift files to add consultarEspecialidades" />
+    <MESSAGE value="Fixed encoding issue after decryption." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1221,7 +1230,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/db_manager.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="38" selection-start="408" selection-end="408" vertical-scroll-proportion="0.29500756">
+        <state line="15" column="19" selection-start="462" selection-end="462" vertical-scroll-proportion="0.34039333">
           <folding />
         </state>
       </provider>
