@@ -9,9 +9,9 @@
     <ignored path=".idea/workspace.xml" />
     <file path="/hospital_server.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384907328619" ignored="false" />
     <file path="$PROJECT_DIR$/../Hospital/.idea/workspace.xml" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384029320116" ignored="false" />
-    <file path="/Dummy.txt" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1385447440203" ignored="false" />
+    <file path="/Dummy.txt" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1385447845951" ignored="false" />
     <file path="$PROJECT_DIR$/../Hospital/.gitignore" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384022960140" ignored="false" />
-    <file path="/db_manager.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1385407321422" ignored="false" />
+    <file path="/db_manager.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1385448777068" ignored="false" />
     <file path="/analisis_clinico.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384027542346" ignored="false" />
     <file path="/atiende.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384027599996" ignored="false" />
     <file path="/doctor.rb" changelist="a0db8815-134c-47f4-afe6-0f377aad9ab2" time="1384027642543" ignored="false" />
@@ -178,7 +178,7 @@
       <file leaf-file-name="db_manager.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/db_manager.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="40" selection-start="293" selection-end="293" vertical-scroll-proportion="0.17739816">
+            <state line="28" column="62" selection-start="895" selection-end="895" vertical-scroll-proportion="0.5519054">
               <folding />
             </state>
           </provider>
@@ -1038,7 +1038,11 @@
       <created>1385447445942</created>
       <updated>1385447445942</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Create populate_db.rb script">
+      <created>1385447851886</created>
+      <updated>1385447851886</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1264,7 +1268,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/db_manager.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="40" selection-start="293" selection-end="293" vertical-scroll-proportion="0.17739816">
+        <state line="28" column="62" selection-start="895" selection-end="895" vertical-scroll-proportion="0.5519054">
           <folding />
         </state>
       </provider>

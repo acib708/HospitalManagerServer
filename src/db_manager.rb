@@ -15,14 +15,14 @@ class DBManager
     cipher = OpenSSL::Cipher.new 'AES-256-CBC'
     cipher.encrypt
     cipher.key, cipher.iv = @password, @iv
-    (cipher.update(data) + cipher.final).unpack('H*')[0]
+    data.nil? ? '' : (cipher.update(data) + cipher.final).unpack('H*')[0]
   end
 
   def decrypt(data)
     data_to_decrypt, decipher = [data].pack('H*'), OpenSSL::Cipher.new('AES-256-CBC')
     decipher.decrypt
     decipher.iv, decipher.key = @iv, @password
-    (decipher.update(data_to_decrypt) + decipher.final).force_encoding 'UTF-8'
+    data.nil? ? '' : (decipher.update(data_to_decrypt) + decipher.final).force_encoding('UTF-8')
   end
 
 #Actualizar
