@@ -1,12 +1,20 @@
+require 'singleton'
+require 'observer'
+require 'pg'
+require './actions'
+require 'openssl'
+require './c_logger'
+
 class DBManager
-  require 'pg'
-  require './actions'
-  require 'openssl'
+
+  include Observable  # Implements the Observable design pattern
+  include Singleton   # Implements the Singleton  design pattern
 
   def initialize
     @connection = PG::Connection.open dbname: 'hospital', host: 'localhost'
-    @password = (OpenSSL::Digest.new 'SHA256').digest 'password'
-    @iv = (OpenSSL::Digest.new 'SHA256').digest 'iv'
+    @password   = (OpenSSL::Digest.new 'SHA256').digest 'password'
+    @iv         = (OpenSSL::Digest.new 'SHA256').digest 'iv'
+    self.add_observer CLogger.new
     self
   end
 
@@ -27,20 +35,22 @@ class DBManager
 
 #Actualizar
   def actualizarAnalisis(analisis) #Returns boolean indicating success or failure
-    puts "Actualizar Análisis: #{analisis}"
+    changed
     @connection.exec "UPDATE analisisclinico SET "+
                          "clave='#{encrypt analisis.clave}', "+
                          "tipo='#{encrypt analisis.tipo}', "+
                          "descripcion='#{encrypt analisis.descripcion}' "+
                          "WHERE clave='#{encrypt analisis.clave}'"
+    notify_observers Time.now, "Actualizar Análisis: #{analisis}"
     true
   rescue PG::Error => e
-    puts "Hubo un error al actualizar la base de datos: #{e.message}"
+    notify_observers Time.now, "Hubo un error al actualizar la base de datos: #{e.message}"
     false
   end
 
   def actualizarDoctor(doctor) #Returns boolean indicating success of failure
-    puts "Actualizar Doctor: #{doctor}"
+    changed
+    notify_observers Time.now, "Actualizar Doctor: #{doctor}"
     @connection.exec "UPDATE doctor SET "+
                          "clave='#{encrypt doctor.clave}', "+
                          "nombre='#{encrypt doctor.nombre}', "+
@@ -50,12 +60,13 @@ class DBManager
                          "WHERE clave='#{encrypt doctor.clave}'"
     true
   rescue PG::Error => e
-    puts "Hubo un error al actualizar la base de datos: #{e.message}"
+    notify_observers Time.now, "Hubo un error al actualizar la base de datos: #{e.message}"
     false
   end
 
   def actualizarPaciente(paciente)
-    puts "Actualizar Paciente: #{paciente}"
+    changed
+    notify_observers Time.now, "Actualizar Paciente: #{paciente}"
     @connection.exec "UPDATE paciente SET "+
                          "clave='#{encrypt paciente.clave}', "+
                          "nombre='#{encrypt paciente.nombre}', "+
@@ -64,93 +75,102 @@ class DBManager
                          "WHERE clave='#{encrypt paciente.clave}'"
     true
   rescue PG::Error => e
-    puts "Hubo un error al actualizar la base de datos: #{e.message}"
+    notify_observers Time.now, "Hubo un error al actualizar la base de datos: #{e.message}"
     false
   end
 
 #Borrar
   def borrarAnalisis(clave) #Returns a boolean indicating success or failure
-    puts "Borrar Análisis: #{clave}"
+    changed
+    notify_observers Time.now, "Borrar Análisis: #{clave}"
     @connection.exec "DELETE FROM serealiza WHERE claveanalisis='#{encrypt clave}'"
     res = @connection.exec "DELETE FROM analisisclinico WHERE clave='#{encrypt clave}'"
     res.cmd_tuples == 1 ? true:false
     true
   rescue PG::Error => e
-    puts "Hubo un error al borrar de la base de datos: #{e.message}"
+    notify_observers Time.now, "Hubo un error al borrar de la base de datos: #{e.message}"
     false
   end
 
   def borrarDoctor(clave) #Returns a boolean indicating success or failure
-    puts "Borrar Doctor: #{clave}"
+    changed
+    notify_observers Time.now, "Borrar Doctor: #{clave}"
     @connection.exec "DELETE FROM atiende WHERE clavedoctor='#{encrypt clave}'"
     res = @connection.exec "DELETE FROM doctor WHERE clave='#{encrypt clave}'"
     res.cmd_tuples == 1 ? true : false
   rescue PG::Error => e
-    puts "Hubo un error al borrar de la base de datos: #{e.message}"
+    notify_observers Time.now, "Hubo un error al borrar de la base de datos: #{e.message}"
     false
   end
 
   def borrarPaciente(clave) #Returns a boolean indicating success or failure
-    puts "Borrar Paciente: #{clave}"
+    changed
+    notify_observers Time.now, "Borrar Paciente: #{clave}"
     @connection.exec "DELETE FROM serealiza WHERE clavePaciente='#{encrypt clave}'"
     @connection.exec "DELETE FROM atiende WHERE clavePaciente='#{encrypt clave}'"
     res = @connection.exec "DELETE FROM paciente WHERE clave='#{encrypt clave}'"
     res.cmd_tuples == 1 ? true:false
     true
   rescue PG::Error => e
-    puts "Hubo un error al borrar de la base de datos: #{e.message}"
+    notify_observers Time.now, "Hubo un error al borrar de la base de datos: #{e.message}"
     false
   end
 
 #Capturar
   def capturarAnalisis(analisis) #Returns a boolean indicating success or failure
-    puts "Capturar Análisis: #{analisis}"
+    changed
+    notify_observers Time.now, "Capturar Análisis: #{analisis}"
     @connection.exec "INSERT INTO analisisclinico VALUES('#{encrypt analisis.clave}','#{encrypt analisis.tipo}','#{encrypt analisis.descripcion}')"
     true
   rescue PG::Error => e
-    puts "Hubo un error al capturar en la base de datos: #{e.message}"
+    notify_observers Time.now, "Hubo un error al capturar en la base de datos: #{e.message}"
     false
   end
 
   def capturarAtiende(atiende) #Returns a boolean indicating success or failure
-    puts "Capturar Atiende: #{atiende}"
+    changed
+    notify_observers Time.now, "Capturar Atiende: #{atiende}"
     @connection.exec "INSERT INTO atiende VALUES('#{encrypt atiende.claveDoctor}', '#{encrypt atiende.clavePaciente}', '#{encrypt atiende.fecha}', '#{encrypt atiende.tratamiento}', '#{encrypt atiende.diagnostico}')"
     true
   rescue PG::Error => e
-    puts "Hubo un error al capturar en la base de datos: #{e.message}"
+    notify_observers Time.now, "Hubo un error al capturar en la base de datos: #{e.message}"
     false
   end
 
   def capturarDoctor(doctor) #Returns a boolean indicating success or failure
-    puts "Capturar Doctor: #{doctor}"
+    changed
+    notify_observers Time.now, "Capturar Doctor: #{doctor}"
     @connection.exec "INSERT INTO doctor VALUES('#{encrypt doctor.clave}', '#{encrypt doctor.nombre}', '#{encrypt doctor.direccion}', '#{encrypt doctor.especialidad}', '#{encrypt doctor.telefono}')"
     true
   rescue PG::Error => e
-    puts "Hubo un error al capturar en la base de datos: #{e.message}"
+    notify_observers Time.now, "Hubo un error al capturar en la base de datos: #{e.message}"
     false
   end
 
   def capturarPaciente(paciente) #Returns a boolean indicating success or failure
-    puts "Capturar Paciente: #{paciente}"
+    changed
+    notify_observers Time.now, "Capturar Paciente: #{paciente}"
     @connection.exec "INSERT INTO paciente VALUES('#{encrypt paciente.clave}', '#{encrypt paciente.nombre}', '#{encrypt paciente.direccion}', '#{encrypt paciente.telefono}')"
     true
   rescue PG::Error => e
-    puts "Hubo un error al capturar en la base de datos: #{e.message}"
+    notify_observers Time.now, "Hubo un error al capturar en la base de datos: #{e.message}"
     false
   end
 
   def capturarSeRealiza(seRealiza) #Returns a boolean indicating success or failure
-    puts "Capturar Se Realiza: #{seRealiza}"
+    changed
+    notify_observers Time.now, "Capturar Se Realiza: #{seRealiza}"
     @connection.exec "INSERT INTO serealiza VALUES('#{encrypt seRealiza.claveAnalisis}', '#{encrypt seRealiza.clavePaciente}', '#{encrypt seRealiza.fechaAplic}', '#{encrypt seRealiza.fechaEntrega}')"
     true
   rescue PG::Error => e
-    puts "Hubo un error al capturar en la base de datos: #{e.message}"
+    notify_observers Time.now, "Hubo un error al capturar en la base de datos: #{e.message}"
     false
   end
 
 #Consultas Generales
   def consultarAnalisis #Returns AnalisisClinico array
-    puts 'Consultar Análisis'
+    changed
+    notify_observers Time.now, 'Consultar Análisis'
     analisis = []
     res = @connection.exec 'SELECT * FROM analisisclinico'
     res.each do |tuple|
@@ -162,12 +182,13 @@ class DBManager
     end
     analisis
   rescue PG::Error => e
-    puts "Hubo un error al consultar la base de datos: #{e.message}"
+    notify_observers Time.now, "Hubo un error al consultar la base de datos: #{e.message}"
     nil
   end
 
   def consultarDoctores #Returns Doctor array
-    puts 'Consultar Doctores'
+    changed
+    notify_observers Time.now, 'Consultar Doctores'
     doctores = []
     res = @connection.exec 'SELECT * FROM doctor'
     res.each do |tuple|
@@ -181,12 +202,13 @@ class DBManager
     end
     doctores
   rescue PG::Error => e
-    puts "Hubo un error al consultar la base de datos: #{e.message}"
+    notify_observers Time.now, "Hubo un error al consultar la base de datos: #{e.message}"
     nil
   end
 
   def consultarAtiende #Returns Atiende array
-    puts 'Consultar Atiende'
+    changed
+    notify_observers Time.now, 'Consultar Atiende'
     atiendes = []
     res = @connection.exec 'SELECT * FROM atiende'
     res.each do |tuple|
@@ -200,12 +222,13 @@ class DBManager
     end
     atiendes
   rescue PG::Error => e
-    puts "Hubo un error al consultar la base de datos: #{e.message}"
+    notify_observers Time.now, "Hubo un error al consultar la base de datos: #{e.message}"
     nil
   end
 
   def consultarPacientes #Returns Paciente array
-    puts 'Consultar Pacientes'
+    changed
+    notify_observers Time.now, 'Consultar Pacientes'
     pacientes = []
     res = @connection.exec 'SELECT * FROM paciente'
     res.each do |tuple|
@@ -218,12 +241,13 @@ class DBManager
     end
     pacientes
   rescue PG::Error => e
-    puts "Hubo un error al consultar la base de datos: #{e.message}"
+    notify_observers Time.now, "Hubo un error al consultar la base de datos: #{e.message}"
     nil
   end
 
   def consultarSeRealiza #Returns SeRealiza array
-    puts 'Consultar Se Realiza'
+    changed
+    notify_observers Time.now, 'Consultar Se Realiza'
     serealizas = []
     res = @connection.exec 'SELECT * FROM serealiza'
     res.each do |tuple|
@@ -236,17 +260,18 @@ class DBManager
     end
     serealizas
   rescue PG::Error => e
-    puts "Hubo un error al consultar la base de datos: #{e.message}"
+    notify_observers Time.now, "Hubo un error al consultar la base de datos: #{e.message}"
     nil
   end
 
 #Consultas por clave
 
   def consultarAnalisisClave(clave) #Returns an AnalisisClinico object or nil if it fails
-    puts "Consultar Análisis Clave: #{clave}"
+    changed
+    notify_observers Time.now, "Consultar Análisis Clave: #{clave}"
     res = @connection.exec "SELECT * FROM analisisclinico WHERE clave='#{encrypt clave}'"
     if res.ntuples == 0
-      puts "No se encontró ningun analisis con la clave #{clave}"
+      notify_observers Time.now, "No se encontró ningun analisis con la clave #{clave}"
       nil
     else
       analisis = AnalisisClinico.new
@@ -256,15 +281,16 @@ class DBManager
       analisis
     end
   rescue PG::Error => e
-    puts "Hubo un error al consultar clave #{clave}: #{e.message}"
+    notify_observers Time.now, "Hubo un error al consultar clave #{clave}: #{e.message}"
     nil
   end
 
   def consultarDoctorClave(clave) #Returns an Doctor object or nil if it fails
-    puts "Consultar Doctor Clave: #{clave}"
+    changed
+    notify_observers Time.now, "Consultar Doctor Clave: #{clave}"
     res = @connection.exec "SELECT * FROM doctor WHERE clave='#{encrypt clave}'"
     if res.ntuples == 0
-      puts "No se encontró ningun doctor con la clave #{clave}"
+      notify_observers Time.now, "No se encontró ningun doctor con la clave #{clave}"
       nil
     else
       doctor = Doctor.new
@@ -276,15 +302,16 @@ class DBManager
       doctor
     end
   rescue PG::Error => e
-    puts "Hubo un error al consultar clave #{clave}: #{e.message}"
+    notify_observers Time.now, "Hubo un error al consultar clave #{clave}: #{e.message}"
     nil
   end
 
   def consultarPacienteClave(clave) #Returns an Paciente object or nil if it fails
-    puts "Consultar Paciente Clave: #{clave}"
+    changed
+    notify_observers Time.now, "Consultar Paciente Clave: #{clave}"
     res = @connection.exec "SELECT * FROM paciente WHERE clave='#{encrypt clave}'"
     if res.ntuples == 0
-      puts "No se encontró ningun paciente con la clave #{clave}"
+      notify_observers Time.now, "No se encontró ningun paciente con la clave #{clave}"
       nil
     else
       paciente = Paciente.new
@@ -295,13 +322,14 @@ class DBManager
       paciente
     end
   rescue PG::Error => e
-    puts "Hubo un error al consultar clave #{clave}: #{e.message}"
+    notify_observers Time.now, "Hubo un error al consultar clave #{clave}: #{e.message}"
     nil
   end
 
 #Consultas por tipo/especialidad
   def consultarAnalisisTipo(tipo) #Returns an array of AnalisisClinico objects, on failure returns nil
-    puts "Consultar Análisis Tipo: #{tipo}"
+    changed
+    notify_observers Time.now, "Consultar Análisis Tipo: #{tipo}"
     analisis = []
     res = @connection.exec "SELECT * FROM analisisclinico WHERE tipo='#{encrypt tipo}'"
     res. each do |tuple|
@@ -313,13 +341,14 @@ class DBManager
     end
     analisis
   rescue PG::Error => e
-    puts "Hubo un error al consultar la base de datos: #{e.message}"
+    notify_observers Time.now, "Hubo un error al consultar la base de datos: #{e.message}"
     nil
   end
 
 #Consultas por tipo/especialidad
   def consultarDoctoresEspecialidad(especialidad) #Returns an array of Doctor objects, on failure returns nil
-    puts "Consultar Doctores Especialidad: #{especialidad}"
+    changed
+    notify_observers Time.now, "Consultar Doctores Especialidad: #{especialidad}"
     doctores = []
     res = @connection.exec "SELECT * FROM doctor WHERE especialidad='#{encrypt especialidad}'"
     res. each do |tuple|
@@ -333,13 +362,14 @@ class DBManager
     end
     doctores
   rescue PG::Error => e
-    puts "Hubo un error al consultar la base de datos: #{e.message}"
+    notify_observers Time.now, "Hubo un error al consultar la base de datos: #{e.message}"
     nil
   end
 
 #Reportes
   def generarReporteAnalisisPaciente(clavePaciente) #Returns an array of ReporteAnalisisPaciente objects, nil on failure
-    puts "Generar Reporte Análisis Paciente: #{clavePaciente}"
+    changed
+    notify_observers Time.now, "Generar Reporte Análisis Paciente: #{clavePaciente}"
     reportes = []
     res = @connection.exec "SELECT analisisclinico.clave AS claveanalisis, paciente.clave AS clavepaciente, tipo, paciente.nombre AS nombrepaciente, fechaaplic, fechaentrega, descripcion FROM (paciente INNER JOIN serealiza ON paciente.clave = '#{encrypt clavePaciente}' AND paciente.clave = serealiza.clavepaciente) INNER JOIN analisisclinico ON analisisclinico.clave = serealiza.claveanalisis"
     res.each do |tuple|
@@ -355,12 +385,13 @@ class DBManager
     end
     reportes
   rescue PG::Error => e
-    puts "Hubo un error al generar reporte: #{e.message}"
+    notify_observers Time.now, "Hubo un error al generar reporte: #{e.message}"
     nil
   end
 
   def generarReportePacientesAnalisis(claveAnalisis) #Returns an array of ReportePacientesAnalisis objects, nil on failure
-    puts "Generar Reporte Pacientes Análisis: #{claveAnalisis}"
+    changed
+    notify_observers Time.now, "Generar Reporte Pacientes Análisis: #{claveAnalisis}"
     reportes = []
     res = @connection.exec "SELECT analisisclinico.clave AS claveanalisis, paciente.clave AS clavepaciente, tipo, paciente.nombre AS nombrepaciente, fechaaplic, fechaentrega, descripcion FROM (analisisclinico INNER JOIN serealiza ON analisisclinico.clave = '#{encrypt claveAnalisis}' AND analisisclinico.clave = serealiza.claveanalisis) INNER JOIN paciente ON paciente.clave = serealiza.clavepaciente"
     res.each do |tuple|
@@ -376,12 +407,13 @@ class DBManager
     end
     reportes
   rescue PG::Error => e
-    puts "Hubo un error al generar reporte: #{e.message}"
+    notify_observers Time.now, "Hubo un error al generar reporte: #{e.message}"
     nil
   end
 
   def generarReporteDoctoresPaciente(clavePaciente) #Returns an array of ReporteDoctoresPaciente objects, nil on failure
-    puts "Generar Reporte Doctores Pacientes: #{clavePaciente}"
+    changed
+    notify_observers Time.now, "Generar Reporte Doctores Pacientes: #{clavePaciente}"
     reportes = []
     res = @connection.exec "SELECT doctor.clave AS clavedoctor, doctor.nombre AS nombredoctor, paciente.clave AS clavepaciente, paciente.nombre AS nombrepaciente, fecha, diagnostico, tratamiento FROM (paciente INNER JOIN atiende ON paciente.clave = '#{encrypt clavePaciente}' AND paciente.clave = atiende.clavepaciente) INNER JOIN doctor ON doctor.clave = atiende.clavedoctor"
     res.each do |tuple|
@@ -397,12 +429,13 @@ class DBManager
     end
     reportes
   rescue PG::Error => e
-    puts "Hubo un error al generar reporte: #{e.message}"
+    notify_observers Time.now, "Hubo un error al generar reporte: #{e.message}"
     nil
   end
 
   def generarReportePacientesDoctor(claveDoctor) #Returns an array of ReportePacientesDoctor objects, nil on failure
-    puts "Generar Reporte Pacientes Doctor: #{claveDoctor}"
+    changed
+    notify_observers Time.now, "Generar Reporte Pacientes Doctor: #{claveDoctor}"
     reportes = []
     res = @connection.exec "SELECT doctor.clave AS clavedoctor, doctor.nombre AS nombredoctor, paciente.clave AS clavepaciente, paciente.nombre AS nombrepaciente, fecha, diagnostico, tratamiento FROM (doctor INNER JOIN atiende ON doctor.clave = '#{encrypt claveDoctor}' AND doctor.clave = atiende.clavedoctor) INNER JOIN paciente ON paciente.clave = atiende.clavepaciente"
     res.each do |tuple|
@@ -418,12 +451,13 @@ class DBManager
     end
     reportes
   rescue PG::Error => e
-    puts "Hubo un error al generar reporte: #{e.message}"
+    notify_observers Time.now, "Hubo un error al generar reporte: #{e.message}"
     nil
   end
 
   def consultarEspecialidades
-    puts 'Generar especialidades'
+    changed
+    notify_observers Time.now, 'Generar especialidades'
     especialidades = []
     res = @connection.exec "SELECT DISTINCT especialidad FROM doctor"
     res.each do |tuple|
@@ -431,12 +465,7 @@ class DBManager
     end
     especialidades
   rescue PG::Error => e
-    puts "Hubo un error al generar especialidades #{e.message}"
+    notify_observers Time.now, "Hubo un error al generar especialidades #{e.message}"
     nil
   end
 end
-
-#db = DBManager.new
-#x = 'Alejandro está viendo mientras pruebo nuestros nuevos métodos de encripción y de decriptación de data'
-#puts db.encrypt x
-#puts db.decrypt db.encrypt x
