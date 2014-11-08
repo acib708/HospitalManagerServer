@@ -1,122 +1,49 @@
 require_relative './pgdb'
 
 class TransactionManager
+  # Constructor
+  def initialize() @db = PGDB.instance end # Singleton Pattern
 
-  def initialize
-    @db = PGDB.instance # Sigleton Pattern
-  end
+  # Actualizar
+  def actualizarAnalisis(analisis) @db.actualizarAnalisis(analisis) end  # Returns boolean indicating success or failure
+  def actualizarDoctor(doctor)     @db.actualizarDoctor(doctor)     end  # Returns boolean indicating success of failure
+  def actualizarPaciente(paciente) @db.actualizarPaciente(paciente) end  # Returns boolean indicating success of failure
 
-  #Actualizar
-  def actualizarAnalisis(analisis) #Returns boolean indicating success or failure
-    @db.actualizarAnalisis(analisis)
-  end
+  # Borrar
+  def borrarAnalisis(clave) @db.borrarAnalisis(clave) end  # Returns a boolean indicating success or failure
+  def borrarDoctor(clave)   @db.borrarDoctor(clave)   end  # Returns a boolean indicating success or failure
+  def borrarPaciente(clave) @db.borrarPaciente(clave) end  # Returns a boolean indicating success or failure
 
-  def actualizarDoctor(doctor) #Returns boolean indicating success of failure
-    @db.actualizarDoctor(doctor)
-  end
+  # Capturar
+  def capturarAnalisis(analisis) @db.capturarAnalisis(analisis) end  # Returns a boolean indicating success or failure
+  def capturarAtiende(atiende)   @db.capturarAtiende(atiende)   end  # Returns a boolean indicating success or failure
+  def capturarDoctor(doctor)     @db.capturarDoctor(doctor)     end  # Returns a boolean indicating success or failure
+  def capturarPaciente(paciente) @db.capturarPaciente(paciente) end  # Returns a boolean indicating success or failure
+  def capturarSeRealiza(seRealiza) @db.capturarSeRealiza(seRealiza) end  # Returns a boolean indicating success or failure
 
-  def actualizarPaciente(paciente)
-    @db.actualizarPaciente(paciente)
-  end
+  # Consultas Generales
+  def consultarAnalisis()  @db.consultarAnalisis  end  # Returns AnalisisClinico array
+  def consultarDoctores()  @db.consultarDoctores  end  # Returns Doctor array
+  def consultarAtiende()   @db.consultarAtiende   end  # Returns Atiende array
+  def consultarPacientes() @db.consultarPacientes end  # Returns Paciente array
+  def consultarSeRealiza() @db.consultarSeRealiza end  # Returns SeRealiza array
 
-#Borrar
-  def borrarAnalisis(clave) #Returns a boolean indicating success or failure
-    @db.borrarAnalisis(clave)
-  end
+  # Consultas por clave
+  def consultarAnalisisClave(clave) @db.consultarAnalisisClave(clave) end  # Returns an AnalisisClinico object or nil if it fails
+  def consultarDoctorClave(clave)   @db.consultarDoctorClave(clave)   end  # Returns an Doctor object or nil if it fails
+  def consultarPacienteClave(clave) @db.consultarPacienteClave(clave) end  # Returns an Paciente object or nil if it fails
 
-  def borrarDoctor(clave) #Returns a boolean indicating success or failure
-    @db.borrarDoctor(clave)
-  end
+  # Consultas por tipo/especialidad
+  def consultarAnalisisTipo(tipo) @db.consultarAnalisisTipo(tipo) end  # Returns an array of AnalisisClinico objects, on failure returns nil
 
-  def borrarPaciente(clave) #Returns a boolean indicating success or failure
-    @db.borrarPaciente(clave)
-  end
+  # Consultas por tipo/especialidad
+  def consultarDoctoresEspecialidad(especialidad) @db.consultarDoctoresEspecialidad(especialidad) end  # Returns an array of Doctor objects, on failure returns nil
 
-#Capturar
-  def capturarAnalisis(analisis) #Returns a boolean indicating success or failure
-    @db.capturarAnalisis(analisis)
-  end
-
-  def capturarAtiende(atiende) #Returns a boolean indicating success or failure
-    @db.capturarAtiende(atiende)
-  end
-
-  def capturarDoctor(doctor) #Returns a boolean indicating success or failure
-    @db.capturarDoctor(doctor)
-  end
-
-  def capturarPaciente(paciente) #Returns a boolean indicating success or failure
-    @db.capturarPaciente(paciente)
-  end
-
-  def capturarSeRealiza(seRealiza) #Returns a boolean indicating success or failure
-    @db.capturarSeRealiza(seRealiza)
-  end
-
-#Consultas Generales
-  def consultarAnalisis #Returns AnalisisClinico array
-    @db.consultarAnalisis
-  end
-
-  def consultarDoctores #Returns Doctor array
-    @db.consultarDoctores
-  end
-
-  def consultarAtiende #Returns Atiende array
-    @db.consultarAtiende
-  end
-
-  def consultarPacientes #Returns Paciente array
-    @db.consultarPacientes
-  end
-
-  def consultarSeRealiza #Returns SeRealiza array
-    @db.consultarSeRealiza
-  end
-
-#Consultas por clave
-
-  def consultarAnalisisClave(clave) #Returns an AnalisisClinico object or nil if it fails
-    @db.consultarAnalisisClave(clave)
-  end
-
-  def consultarDoctorClave(clave) #Returns an Doctor object or nil if it fails
-    @db.consultarDoctorClave(clave)
-  end
-
-  def consultarPacienteClave(clave) #Returns an Paciente object or nil if it fails
-    @db.consultarPacienteClave(clave)
-  end
-
-#Consultas por tipo/especialidad
-  def consultarAnalisisTipo(tipo) #Returns an array of AnalisisClinico objects, on failure returns nil
-    @db.consultarAnalisisTipo(tipo)
-  end
-
-#Consultas por tipo/especialidad
-  def consultarDoctoresEspecialidad(especialidad) #Returns an array of Doctor objects, on failure returns nil
-    @db.consultarDoctoresEspecialidad(especialidad)
-  end
-
-#Reportes
-  def generarReporteAnalisisPaciente(clavePaciente) #Returns an array of ReporteAnalisisPaciente objects, nil on failure
-    @db.generarReporteAnalisisPaciente(clavePaciente)
-  end
-
-  def generarReportePacientesAnalisis(claveAnalisis) #Returns an array of ReportePacientesAnalisis objects, nil on failure
-    @db.generarReportePacientesAnalisis(claveAnalisis)
-  end
-
-  def generarReporteDoctoresPaciente(clavePaciente) #Returns an array of ReporteDoctoresPaciente objects, nil on failure
-    @db.generarReporteDoctoresPaciente(clavePaciente)
-  end
-
-  def generarReportePacientesDoctor(claveDoctor) #Returns an array of ReportePacientesDoctor objects, nil on failure
-    @db.generarReportePacientesDoctor(claveDoctor)
-  end
-
-  def consultarEspecialidades
-    @db.consultarEspecialidades
-  end
+  # Reportes
+  def generarReporteAnalisisPaciente(clavePaciente)  @db.generarReporteAnalisisPaciente(clavePaciente)  end  # Returns an array of ReporteAnalisisPaciente objects, nil on failure
+  def generarReportePacientesAnalisis(claveAnalisis) @db.generarReportePacientesAnalisis(claveAnalisis) end  # Returns an array of ReportePacientesAnalisis objects, nil on failure
+  def generarReporteDoctoresPaciente(clavePaciente)  @db.generarReporteDoctoresPaciente(clavePaciente)  end  # Returns an array of ReporteDoctoresPaciente objects, nil on failure
+  def generarReportePacientesDoctor(claveDoctor)     @db.generarReportePacientesDoctor(claveDoctor)     end  # Returns an array of ReportePacientesDoctor objects, nil on failure
+  def consultarEspecialidades() @db.consultarEspecialidades end
 
 end
