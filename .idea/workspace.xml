@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0db8815-134c-47f4-afe6-0f377aad9ab2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DB/transaction_manager.rb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DB/db_manager.rb" afterPath="$PROJECT_DIR$/src/DB/pgdb.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Thrift/actions.rb" afterPath="$PROJECT_DIR$/src/Thrift/actions.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Thrift/actions_constants.rb" afterPath="$PROJECT_DIR$/src/Thrift/actions_constants.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Client/hospital_client.rb" afterPath="$PROJECT_DIR$/src/Client/hospital_client.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Server/hospital_server.rb" afterPath="$PROJECT_DIR$/src/Server/hospital_server.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DB/transaction_manager.rb" afterPath="$PROJECT_DIR$/src/DB/transaction_manager.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="HospitalServer.iws" />
@@ -20,9 +15,9 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/HospitalServer@Test_Client.coverage" NAME="Test Client Coverage Results" MODIFIED="1415419708407" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/Client" MODULE_NAME="HospitalServer" />
+    <SUITE FILE_PATH="coverage/HospitalServer@Test_Client.coverage" NAME="Test Client Coverage Results" MODIFIED="1415419969138" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/Client" MODULE_NAME="HospitalServer" />
     <SUITE FILE_PATH="coverage/HospitalServer@hospital_server.coverage" NAME="hospital_server Coverage Results" MODIFIED="1415327548909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" MODULE_NAME="HospitalServer" />
-    <SUITE FILE_PATH="coverage/HospitalServer@HospitalManager_Server.coverage" NAME="HospitalManager Server Coverage Results" MODIFIED="1415419705490" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/Server/" MODULE_NAME="HospitalServer" />
+    <SUITE FILE_PATH="coverage/HospitalServer@HospitalManager_Server.coverage" NAME="HospitalManager Server Coverage Results" MODIFIED="1415419964692" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/Server/" MODULE_NAME="HospitalServer" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -89,8 +84,8 @@
       <file leaf-file-name="transaction_manager.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/DB/transaction_manager.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.6546392" vertical-offset="0" max-vertical-offset="1875">
-              <caret line="103" column="70" selection-start-line="103" selection-start-column="70" selection-end-line="103" selection-end-column="70" />
+            <state vertical-scroll-proportion="0.7989691" vertical-offset="0" max-vertical-offset="1905">
+              <caret line="31" column="29" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -207,8 +202,8 @@
         <option value="$PROJECT_DIR$/src/Client/hospital_client.rb" />
         <option value="$PROJECT_DIR$/src/DB/db.rb" />
         <option value="$PROJECT_DIR$/src/Server/hospital_server.rb" />
-        <option value="$PROJECT_DIR$/src/DB/transaction_manager.rb" />
         <option value="$PROJECT_DIR$/src/DB/pgdb.rb" />
+        <option value="$PROJECT_DIR$/src/DB/transaction_manager.rb" />
       </list>
     </option>
   </component>
@@ -1060,7 +1055,7 @@
       <workItem from="1415324182701" duration="2634000" />
       <workItem from="1415379007697" duration="23000" />
       <workItem from="1415403003839" duration="370000" />
-      <workItem from="1415415464374" duration="3248000" />
+      <workItem from="1415415464374" duration="3489000" />
     </task>
     <task id="LOCAL-00001" summary="Basic required files, and gems.">
       <created>1384023680391</created>
@@ -1166,11 +1161,15 @@
       <created>1415403037096</created>
       <updated>1415403037096</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Changes">
+      <created>1415419829515</created>
+      <updated>1415419829515</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8231000" />
+    <option name="totallyTimeSpent" value="8472000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1194,7 +1193,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1217,7 +1216,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18333334" sideWeight="0.4713217" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25791326" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25791326" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1260,7 +1259,8 @@
     <MESSAGE value="Fixed encoding issue after decryption." />
     <MESSAGE value="Create populate_db.rb script" />
     <MESSAGE value="Added Observable and Singleton design pattern, Custom Logger class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Observable and Singleton design pattern, Custom Logger class" />
+    <MESSAGE value="Changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1374,8 +1374,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DB/transaction_manager.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.6546392" vertical-offset="0" max-vertical-offset="1875">
-          <caret line="103" column="70" selection-start-line="103" selection-start-column="70" selection-end-line="103" selection-end-column="70" />
+        <state vertical-scroll-proportion="0.7989691" vertical-offset="0" max-vertical-offset="1905">
+          <caret line="31" column="29" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
           <folding />
         </state>
       </provider>

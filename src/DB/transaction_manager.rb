@@ -2,7 +2,9 @@ require_relative './pgdb'
 
 class TransactionManager
 
-  @db = PGDB.instance # Sigleton Pattern
+  def initialize
+    @db = PGDB.instance # Sigleton Pattern
+  end
 
   #Actualizar
   def actualizarAnalisis(analisis) #Returns boolean indicating success or failure
