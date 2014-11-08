@@ -1,11 +1,11 @@
 require 'singleton'
 require 'observer'
 require 'pg'
-require './actions'
 require 'openssl'
-require './c_logger'
+require_relative '../Thrift/actions'
+require_relative './c_logger'
 
-class DBManager
+class PGDB
 
   include Observable  # Implements the Observable design pattern
   include Singleton   # Implements the Singleton  design pattern

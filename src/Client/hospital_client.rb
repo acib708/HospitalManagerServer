@@ -1,8 +1,8 @@
 require 'thrift'
-require './actions'
+require_relative '../Thrift/actions'
 
 begin
-  transport = Thrift::BufferedTransport.new Thrift::Socket.new '192.168.19.14', 7911
+  transport = Thrift::BufferedTransport.new Thrift::Socket.new '192.168.1.2', 7911
   protocol  = Thrift::BinaryProtocol.new transport
   client    = Actions::Client.new protocol
 

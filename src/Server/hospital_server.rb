@@ -1,15 +1,15 @@
-require './db_manager'
 require 'thrift'
-require './actions'
+require_relative '../DB/transaction_manager'
+require_relative '../Thrift/actions'
 
-handler           = DBManager.instance # Singleton Pattern
+handler           = TransactionManager.new
 processor         = Actions::Processor.new handler
 transport         = Thrift::ServerSocket.new 7911
 transport_factory = Thrift::BufferedTransportFactory.new
 server            = Thrift::SimpleServer.new processor, transport, transport_factory
 
 # # Testing Singleton pattern
-# some_instance = DBManager.instance
+# some_instance = Db.instance
 #
 # p handler
 # p some_instance
